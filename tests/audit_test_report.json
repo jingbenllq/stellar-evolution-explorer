@@ -1,0 +1,731 @@
+{
+  "timestamp": "2026-11-01T15:18:52Z",
+  "build_ok": true,
+  "build_message": "Build script executed cleanly with exit code 0.",
+  "total": 72,
+  "passed": 72,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "results": [
+    {
+      "test_id": "T1_F1_TC1",
+      "name": "3D Canvas & WebGL Container Structure",
+      "tier": 1,
+      "feature": "3D Cutaway Onion-Skin",
+      "milestone": "M2",
+      "passed": true,
+      "message": "3D WebGL Canvas container detected with Three.js/WebGL integration",
+      "duration_ms": 27.342599991243333
+    },
+    {
+      "test_id": "T1_F1_TC2",
+      "name": "Concentric 3/4 Cutaway Geometry Construction",
+      "tier": 1,
+      "feature": "3D Cutaway Onion-Skin",
+      "milestone": "M2",
+      "passed": true,
+      "message": "3/4 Cutaway geometry routines found in 3D onion skin engine",
+      "duration_ms": 30.99960001418367
+    },
+    {
+      "test_id": "T1_F1_TC3",
+      "name": "Non-Linear Radial Scaling Function R(q)",
+      "tier": 1,
+      "feature": "3D Cutaway Onion-Skin",
+      "milestone": "M2",
+      "passed": true,
+      "message": "Non-linear radial scaling R(q) present for core visibility",
+      "duration_ms": 233.4141000173986
+    },
+    {
+      "test_id": "T1_F1_TC4",
+      "name": "7-Element Chemical Shell Distinction & Color Coding",
+      "tier": 1,
+      "feature": "3D Cutaway Onion-Skin",
+      "milestone": "M2",
+      "passed": true,
+      "message": "All 7 nuclear shell isotopes (Fe, Si, Ne, O, C, He, H) mapped",
+      "duration_ms": 200.08640000014566
+    },
+    {
+      "test_id": "T1_F1_TC5",
+      "name": "Active Nuclear Burning Dynamic Pulsation Indicator",
+      "tier": 1,
+      "feature": "3D Cutaway Onion-Skin",
+      "milestone": "M2",
+      "passed": true,
+      "message": "Dynamic emissive pulsation / nuclear burning indicator present",
+      "duration_ms": 0.8430999878328294
+    },
+    {
+      "test_id": "T1_F2_TC1",
+      "name": "High-DPI Canvas Helper Function Declaration",
+      "tier": 1,
+      "feature": "High-DPI Canvas Handling",
+      "milestone": "M1",
+      "passed": true,
+      "message": "setupHiDPICanvas function declared in script",
+      "duration_ms": 2.674899995326996
+    },
+    {
+      "test_id": "T1_F2_TC2",
+      "name": "Backing Store Dimensions Scaled by devicePixelRatio",
+      "tier": 1,
+      "feature": "High-DPI Canvas Handling",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Canvas backing store width/height dynamically scaled by DPR",
+      "duration_ms": 18.29470001393929
+    },
+    {
+      "test_id": "T1_F2_TC3",
+      "name": "2D Context Coordinate Transformation (setTransform/scale)",
+      "tier": 1,
+      "feature": "High-DPI Canvas Handling",
+      "milestone": "M1",
+      "passed": true,
+      "message": "setTransform(dpr, 0, 0, dpr, 0, 0) or scale(dpr, dpr) applied",
+      "duration_ms": 2.969299996038899
+    },
+    {
+      "test_id": "T1_F2_TC4",
+      "name": "Responsive Window Resize Event Listener Attached",
+      "tier": 1,
+      "feature": "High-DPI Canvas Handling",
+      "milestone": "M1",
+      "passed": true,
+      "message": "window.addEventListener('resize', ...) detected",
+      "duration_ms": 2.8674000059254467
+    },
+    {
+      "test_id": "T1_F2_TC5",
+      "name": "High-DPI Resolution Applied Across All 2D Canvases",
+      "tier": 1,
+      "feature": "High-DPI Canvas Handling",
+      "milestone": "M1",
+      "passed": true,
+      "message": "All 2D chart drawing routines use High-DPI scaling",
+      "duration_ms": 7.958500005770475
+    },
+    {
+      "test_id": "T1_F3_TC1",
+      "name": "Floating Tooltip DOM Container (#stellarTooltip) & CSS",
+      "tier": 1,
+      "feature": "Hover Tooltips",
+      "milestone": "M1",
+      "passed": true,
+      "message": "#stellarTooltip DOM container and CSS declarations confirmed",
+      "duration_ms": 0.15549999079667032
+    },
+    {
+      "test_id": "T1_F3_TC2",
+      "name": "Smart Viewport Edge Clamping & Direction Flipping",
+      "tier": 1,
+      "feature": "Hover Tooltips",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Tooltip detects innerWidth/innerHeight to prevent overflow",
+      "duration_ms": 7.1186999848578125
+    },
+    {
+      "test_id": "T1_F3_TC3",
+      "name": "HR Diagram Interactive Track Snapping & Tooltip",
+      "tier": 1,
+      "feature": "Hover Tooltips",
+      "milestone": "M1",
+      "passed": true,
+      "message": "HR Diagram hover listener snaps to evolutionary track with metrics",
+      "duration_ms": 8.65559998783283
+    },
+    {
+      "test_id": "T1_F3_TC4",
+      "name": "Central State (Rho-T) Ignition Lines & Phase Hover Tooltip",
+      "tier": 1,
+      "feature": "Hover Tooltips",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Rho-T diagram hover listener detects ignition lines / central states",
+      "duration_ms": 36.53520002262667
+    },
+    {
+      "test_id": "T1_F3_TC5",
+      "name": "Radial Chemical Profile Vertical Guideline & Isotope Hover",
+      "tier": 1,
+      "feature": "Hover Tooltips",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Profile canvas hover listener inspects internal mass q and isotopes",
+      "duration_ms": 39.29479999351315
+    },
+    {
+      "test_id": "T1_F4_TC1",
+      "name": "Multi-Speed Playback Buttons Markup (0.5x, 1x, 2x, 5x)",
+      "tier": 1,
+      "feature": "Multi-Speed Playback",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Speed selector buttons (0.5x, 1x, 2x, 5x) declared in DOM",
+      "duration_ms": 1.7078999953810126
+    },
+    {
+      "test_id": "T1_F4_TC2",
+      "name": "Dynamic Playback Timer Re-computation on Speed Change",
+      "tier": 1,
+      "feature": "Multi-Speed Playback",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Playback timer dynamically recalculates interval based on speed",
+      "duration_ms": 20.07860000594519
+    },
+    {
+      "test_id": "T1_F4_TC3",
+      "name": "Play/Pause Button & Toggle State Indicator",
+      "tier": 1,
+      "feature": "Multi-Speed Playback",
+      "milestone": "M1",
+      "passed": true,
+      "message": "playBtn toggles between Play and Pause states",
+      "duration_ms": 1.9258999964222312
+    },
+    {
+      "test_id": "T1_F4_TC4",
+      "name": "Step Navigation Buttons (Previous/Next Step)",
+      "tier": 1,
+      "feature": "Multi-Speed Playback",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Step navigation buttons (\u23ee and \u23ed) present in UI",
+      "duration_ms": 0.8006000134628266
+    },
+    {
+      "test_id": "T1_F4_TC5",
+      "name": "Keyboard Shortcut Event Handlers (Space, Left, Right)",
+      "tier": 1,
+      "feature": "Multi-Speed Playback",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Keyboard event listener handles Space and Arrow keys",
+      "duration_ms": 4.470300016691908
+    },
+    {
+      "test_id": "T1_F5_TC1",
+      "name": "5-Phase Continuous Timeline Ribbon Bar",
+      "tier": 1,
+      "feature": "Timeline Stage Markers",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Timeline ribbon bar dividing steps into physical phases found",
+      "duration_ms": 0.28440001187846065
+    },
+    {
+      "test_id": "T1_F5_TC2",
+      "name": "Stage Anchor Pins Positioned at Key Stage Indices",
+      "tier": 1,
+      "feature": "Timeline Stage Markers",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Stage anchor pins positioned along timeline track",
+      "duration_ms": 0.12989999959245324
+    },
+    {
+      "test_id": "T1_F5_TC3",
+      "name": "Interactive Stage Click-to-Seek Synchronization",
+      "tier": 1,
+      "feature": "Timeline Stage Markers",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Clicking stage markers updates step index, slider, and charts",
+      "duration_ms": 5.564999999478459
+    },
+    {
+      "test_id": "T1_F5_TC4",
+      "name": "Active Evolutionary Stage Real-time Highlighting",
+      "tier": 1,
+      "feature": "Timeline Stage Markers",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Active class dynamically applied to current stage indicator",
+      "duration_ms": 4.720900004031137
+    },
+    {
+      "test_id": "T1_F5_TC5",
+      "name": "Step Counter & Stage Name Status Badges",
+      "tier": 1,
+      "feature": "Timeline Stage Markers",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Step counter and stage name badges present in timeline header",
+      "duration_ms": 0.29540000832639635
+    },
+    {
+      "test_id": "T1_F6_TC1",
+      "name": "Header One-Click Export Dropdown Menu",
+      "tier": 1,
+      "feature": "Export System",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Export dropdown button and item menu declared in header",
+      "duration_ms": 0.23720000172033906
+    },
+    {
+      "test_id": "T1_F6_TC2",
+      "name": "Individual Canvas PNG Image Export Function",
+      "tier": 1,
+      "feature": "Export System",
+      "milestone": "M1",
+      "passed": true,
+      "message": "exportCanvasPNG uses canvas toBlob/toDataURL('image/png') for chart download",
+      "duration_ms": 3.9453999779652804
+    },
+    {
+      "test_id": "T1_F6_TC3",
+      "name": "Composite 4-Panel Dashboard PNG Image Export",
+      "tier": 1,
+      "feature": "Export System",
+      "milestone": "M1",
+      "passed": true,
+      "message": "exportAllChartsCompositePNG stitches 4 panels onto offscreen canvas",
+      "duration_ms": 2.6883000100497156
+    },
+    {
+      "test_id": "T1_F6_TC4",
+      "name": "Evolutionary Track CSV Export with UTF-8 BOM",
+      "tier": 1,
+      "feature": "Export System",
+      "milestone": "M1",
+      "passed": true,
+      "message": "exportCurrentTrackCSV generates CSV with UTF-8 BOM \\uFEFF",
+      "duration_ms": 21.180600015213713
+    },
+    {
+      "test_id": "T1_F6_TC5",
+      "name": "Radial Profile CSV & Full Model JSON Data Exports",
+      "tier": 1,
+      "feature": "Export System",
+      "milestone": "M1",
+      "passed": true,
+      "message": "exportCurrentProfileCSV and exportCurrentModelJSON declared",
+      "duration_ms": 5.7524000003468245
+    },
+    {
+      "test_id": "T2_B1_TC1",
+      "name": "Step 0 Lower Bound (ZAMS) Validation",
+      "tier": 2,
+      "feature": "Step Limits 0 and 199",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Slider min='0' and all 28 models stage_indices[0] == 0 verified",
+      "duration_ms": 0.22829999215900898
+    },
+    {
+      "test_id": "T2_B1_TC2",
+      "name": "Step 199 Upper Bound (EndState) Validation",
+      "tier": 2,
+      "feature": "Step Limits 0 and 199",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Slider max='199' and all models have exactly 200 history steps",
+      "duration_ms": 0.1373999984934926
+    },
+    {
+      "test_id": "T2_B1_TC3",
+      "name": "Loop Wrap-Around Step Modulo Arithmetic ((stepIdx + 1) % 200)",
+      "tier": 2,
+      "feature": "Step Limits 0 and 199",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Playback animation loop wraps around cleanly with modulo 200",
+      "duration_ms": 2.780700015136972
+    },
+    {
+      "test_id": "T2_B1_TC4",
+      "name": "Single-Step Backward Clamping at Lower Bound (stepIdx >= 0)",
+      "tier": 2,
+      "feature": "Step Limits 0 and 199",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Step backward clamps at 0, preventing negative index underflow",
+      "duration_ms": 4.145199985941872
+    },
+    {
+      "test_id": "T2_B1_TC5",
+      "name": "Single-Step Forward Clamping at Upper Bound (stepIdx <= 199)",
+      "tier": 2,
+      "feature": "Step Limits 0 and 199",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Step forward clamps at 199, preventing array index overflow",
+      "duration_ms": 5.073999986052513
+    },
+    {
+      "test_id": "T2_B2_TC1",
+      "name": "Minimum Speed (0.5x) Interval Boundary (>= 150ms)",
+      "tier": 2,
+      "feature": "Boundary Speeds 0.5x and 5.0x",
+      "milestone": "M1",
+      "passed": true,
+      "message": "0.5x speed produces interval of 160ms (>= 150ms)",
+      "duration_ms": 110.11120001785457
+    },
+    {
+      "test_id": "T2_B2_TC2",
+      "name": "Maximum Speed (5.0x) Interval Boundary (<= 20ms)",
+      "tier": 2,
+      "feature": "Boundary Speeds 0.5x and 5.0x",
+      "milestone": "M1",
+      "passed": true,
+      "message": "5.0x speed produces interval of 16ms (<= 20ms)",
+      "duration_ms": 107.92490001767874
+    },
+    {
+      "test_id": "T2_B2_TC3",
+      "name": "Dynamic Speed Transition (0.5x -> 5.0x) Timer Leak Prevention",
+      "tier": 2,
+      "feature": "Boundary Speeds 0.5x and 5.0x",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Dynamic transition cleanly clears old interval without timer leaks",
+      "duration_ms": 108.26919999090023
+    },
+    {
+      "test_id": "T2_B2_TC4",
+      "name": "Playback Speed Retention While Paused",
+      "tier": 2,
+      "feature": "Boundary Speeds 0.5x and 5.0x",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Selected speed state retained when paused and applied on resume",
+      "duration_ms": 90.64979999675415
+    },
+    {
+      "test_id": "T2_B2_TC5",
+      "name": "Speed Button Active Class Exclusivity Guarantee",
+      "tier": 2,
+      "feature": "Boundary Speeds 0.5x and 5.0x",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Active class removal loop guarantees mutual exclusivity among speed buttons",
+      "duration_ms": 2.772400010144338
+    },
+    {
+      "test_id": "T2_B3_TC1",
+      "name": "Minimum Mass (0.3 M_sun) Low-Mass Convective Star Dataset",
+      "tier": 2,
+      "feature": "Extreme Stellar Masses 0.3 and 25.0 M_sun",
+      "milestone": "M1",
+      "passed": true,
+      "message": "All 4 metallicity models for 0.3 M_sun loaded with 200 steps",
+      "duration_ms": 0.02929999027401209
+    },
+    {
+      "test_id": "T2_B3_TC2",
+      "name": "Maximum Mass (25.0 M_sun) Massive Star Dataset & 6 Profiles",
+      "tier": 2,
+      "feature": "Extreme Stellar Masses 0.3 and 25.0 M_sun",
+      "milestone": "M1",
+      "passed": true,
+      "message": "All 4 metallicity models for 25.0 M_sun contain 6 evolutionary profiles",
+      "duration_ms": 0.008400005754083395
+    },
+    {
+      "test_id": "T2_B3_TC3",
+      "name": "HR Diagram Coordinate Bounds Encompass Extreme Range [-3.0, 6.0]",
+      "tier": 2,
+      "feature": "Extreme Stellar Masses 0.3 and 25.0 M_sun",
+      "milestone": "M1",
+      "passed": true,
+      "message": "HR diagram bounds [log(L/L_sun) from -3.0 to 6.0] accommodate 0.3 to 25 M_sun",
+      "duration_ms": 5.107299977680668
+    },
+    {
+      "test_id": "T2_B3_TC4",
+      "name": "Stellar Radius Dynamic Range Formatting (0.25 to >1000 R_sun)",
+      "tier": 2,
+      "feature": "Extreme Stellar Masses 0.3 and 25.0 M_sun",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Radius values format cleanly across 4 orders of magnitude without NaN",
+      "duration_ms": 101.87709997990169
+    },
+    {
+      "test_id": "T2_B3_TC5",
+      "name": "Mass Selector Options Contain Extreme Bounds (0.3 and 25.0 M_sun)",
+      "tier": 2,
+      "feature": "Extreme Stellar Masses 0.3 and 25.0 M_sun",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Mass selection lists explicitly include 0.3 M_sun and 25.0 M_sun",
+      "duration_ms": 0.009199982741847634
+    },
+    {
+      "test_id": "T2_B4_TC1",
+      "name": "Low Metallicity Limit (Z = 0.0001, Pop II) Dataset Integrity",
+      "tier": 2,
+      "feature": "Extreme Metallicities Z = 0.0001 and Z = 0.03",
+      "milestone": "M1",
+      "passed": true,
+      "message": "All 7 mass models populated for low metallicity Z = 0.0001",
+      "duration_ms": 0.021099986042827368
+    },
+    {
+      "test_id": "T2_B4_TC2",
+      "name": "High Metallicity Limit (Z = 0.03, Super-Solar) Dataset Integrity",
+      "tier": 2,
+      "feature": "Extreme Metallicities Z = 0.0001 and Z = 0.03",
+      "milestone": "M1",
+      "passed": true,
+      "message": "All 7 mass models populated for high metallicity Z = 0.03",
+      "duration_ms": 0.0048999791033566
+    },
+    {
+      "test_id": "T2_B4_TC3",
+      "name": "Metallicity Selector Contains Extreme Values (0.0001 and 0.03)",
+      "tier": 2,
+      "feature": "Extreme Metallicities Z = 0.0001 and Z = 0.03",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Metallicity selector options explicitly encompass 0.0001 and 0.03",
+      "duration_ms": 0.020500010577961802
+    },
+    {
+      "test_id": "T2_B4_TC4",
+      "name": "Metallicity Switching Under Fixed Mass State Synchronization",
+      "tier": 2,
+      "feature": "Extreme Metallicities Z = 0.0001 and Z = 0.03",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Model query correctly preserves selected mass when switching Z",
+      "duration_ms": 97.87649998907
+    },
+    {
+      "test_id": "T2_B4_TC5",
+      "name": "Metallicity Formatting Precision Without Floating Point Truncation",
+      "tier": 2,
+      "feature": "Extreme Metallicities Z = 0.0001 and Z = 0.03",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Low metallicity formats accurately (0.01% solar equivalent)",
+      "duration_ms": 92.02149999327958
+    },
+    {
+      "test_id": "T2_B5_TC1",
+      "name": "Rapid Play/Pause Toggling State & Timer Stability",
+      "tier": 2,
+      "feature": "Rapid UI Toggling & State Stability",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Rapid toggling cleanly zeroes interval timer on even cycle count",
+      "duration_ms": 96.76210000179708
+    },
+    {
+      "test_id": "T2_B5_TC2",
+      "name": "Rapid Speed Selector Toggling State Integrity",
+      "tier": 2,
+      "feature": "Rapid UI Toggling & State Stability",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Rapid speed cycling preserves valid numerical speed state",
+      "duration_ms": 90.34619998419657
+    },
+    {
+      "test_id": "T2_B5_TC3",
+      "name": "Rapid Export Dropdown Toggle Class Consistency",
+      "tier": 2,
+      "feature": "Rapid UI Toggling & State Stability",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Export menu toggle logic accurately tracks open/closed state",
+      "duration_ms": 96.14949999377131
+    },
+    {
+      "test_id": "T2_B5_TC4",
+      "name": "Rapid Timeline Scrubbing Boundary Bounds [0, 199]",
+      "tier": 2,
+      "feature": "Rapid UI Toggling & State Stability",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Rapid scrubber sweep remains strictly within valid bounds [0, 199]",
+      "duration_ms": 97.43379999417812
+    },
+    {
+      "test_id": "T2_B5_TC5",
+      "name": "Model Mass Change Concurrency During Active Playback",
+      "tier": 2,
+      "feature": "Rapid UI Toggling & State Stability",
+      "milestone": "M1",
+      "passed": true,
+      "message": "State preserves playing flag and stepIdx when switching stellar mass",
+      "duration_ms": 95.18709999974817
+    },
+    {
+      "test_id": "T2_B6_TC1",
+      "name": "Zero Mass Coordinate (q = 0) Radial Scaling Guard",
+      "tier": 2,
+      "feature": "Zero-Division Guards & Numerical Robustness",
+      "milestone": "M2",
+      "passed": true,
+      "message": "R(0) evaluates to finite positive non-zero base radius (1.2)",
+      "duration_ms": 92.51850002328865
+    },
+    {
+      "test_id": "T2_B6_TC2",
+      "name": "Zero Chemical Abundance Fraction (X_i = 0) Display Guard",
+      "tier": 2,
+      "feature": "Zero-Division Guards & Numerical Robustness",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Zero chemical abundance safely formats with threshold without log(0) crash",
+      "duration_ms": 95.12670000549406
+    },
+    {
+      "test_id": "T2_B6_TC3",
+      "name": "Zero Nuclear Luminosity Ratio Guard (No NaN% Output)",
+      "tier": 2,
+      "feature": "Zero-Division Guards & Numerical Robustness",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Zero nuclear luminosity ratio evaluates cleanly to 0.0% without NaN",
+      "duration_ms": 92.82289998373017
+    },
+    {
+      "test_id": "T2_B6_TC4",
+      "name": "devicePixelRatio Zero / Undefined Safe Fallback to 1.0",
+      "tier": 2,
+      "feature": "Zero-Division Guards & Numerical Robustness",
+      "milestone": "M1",
+      "passed": true,
+      "message": "devicePixelRatio fallback Math.max(1, dpr || 1) guards against 0/null",
+      "duration_ms": 102.68710000673309
+    },
+    {
+      "test_id": "T2_B6_TC5",
+      "name": "Zero Canvas Client Dimensions Fallback to Standard 600x380",
+      "tier": 2,
+      "feature": "Zero-Division Guards & Numerical Robustness",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Canvas width/height zero fallback defaults safely to 600x380 buffer",
+      "duration_ms": 93.63789999042638
+    },
+    {
+      "test_id": "T3_INT_TC1",
+      "name": "Speed Change Concurrently with Stage Seek",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Stage seek index preserved (step 80) when speed is adjusted during seek",
+      "duration_ms": 96.56459998222999
+    },
+    {
+      "test_id": "T3_INT_TC2",
+      "name": "Data/Image Export Execution During Active Animation Playback",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Export routine completes 200 rows without altering playing state or freezing step",
+      "duration_ms": 91.62829999695532
+    },
+    {
+      "test_id": "T3_INT_TC3",
+      "name": "High-DPI Resize Synchronization with 3D Camera & Viewport",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M2",
+      "passed": true,
+      "message": "Camera aspect ratio and projection matrix correctly adapt to high-DPI resize",
+      "duration_ms": 90.87379998527467
+    },
+    {
+      "test_id": "T3_INT_TC4",
+      "name": "Comparative Track Overlay Distinction in Hover Tooltip",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Tooltip accurately differentiates between primary and comparison tracks",
+      "duration_ms": 92.99200001987629
+    },
+    {
+      "test_id": "T3_INT_TC5",
+      "name": "Stage Anchor Pin Click During Playback with Instant Re-render",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Clicking stage anchor pin immediately seeks step and maintains playback loop",
+      "duration_ms": 86.51900000404567
+    },
+    {
+      "test_id": "T3_INT_TC6",
+      "name": "3D Raycast Shell Hit-Detection Invariant to Dynamic Pulsation",
+      "tier": 3,
+      "feature": "Cross-Feature Interaction",
+      "milestone": "M2",
+      "passed": true,
+      "message": "Raycast intersection geometry remains invariant throughout dynamic pulse cycle",
+      "duration_ms": 88.3470999833662
+    },
+    {
+      "test_id": "T4_SCN_TC1",
+      "name": "25 M_sun Supernova Precursor (EndState) Onion-Skin Hierarchy",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M2",
+      "passed": true,
+      "message": "25 M_sun EndState exhibits full onion-skin hierarchy: Fe core (0.92), Si (0.78), O (0.68), H (0.72)",
+      "duration_ms": 0.07109998841769993
+    },
+    {
+      "test_id": "T4_SCN_TC2",
+      "name": "1 M_sun RGB Tip Helium Flash Signature (Degenerate He Core)",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M1",
+      "passed": true,
+      "message": "1 M_sun Step 80 confirms degenerate He core (eta=18.33 > 0, M_He=0.43 M_sun, log L=3.33)",
+      "duration_ms": 0.013400014722719789
+    },
+    {
+      "test_id": "T4_SCN_TC3",
+      "name": "Full Evolutionary Track CSV Export Format & UTF-8 BOM",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Track CSV contains UTF-8 BOM, standard headers, and exactly 200 formatted data rows",
+      "duration_ms": 93.40209999936633
+    },
+    {
+      "test_id": "T4_SCN_TC4",
+      "name": "Radial Chemical Profile CSV Export (80 Zones & 7 Isotopes)",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Profile CSV contains 80 concentric zones with mass coordinates and all 7 isotopic abundances",
+      "duration_ms": 93.84590000263415
+    },
+    {
+      "test_id": "T4_SCN_TC5",
+      "name": "Composite 4-Panel Dashboard PNG Offscreen Layout (1280x920)",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M1",
+      "passed": true,
+      "message": "Composite dashboard creates 1280x920 canvas composing all 4 quadrants and metadata banner",
+      "duration_ms": 96.73999997903593
+    },
+    {
+      "test_id": "T4_SCN_TC6",
+      "name": "Low-Mass 0.3 M_sun Convective Main Sequence Evolution Guard",
+      "tier": 4,
+      "feature": "Real-World Scenarios",
+      "milestone": "M1",
+      "passed": true,
+      "message": "0.3 M_sun model stays below helium/carbon ignition (max log Tc = 7.17 < 8.0), avoiding unphysical heavy core shells",
+      "duration_ms": 0.0323000131174922
+    }
+  ]
+}
