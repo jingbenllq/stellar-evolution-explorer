@@ -73,7 +73,7 @@ def build_grid_directories(base_dir: Path, execute_mesa: bool = False) -> list[P
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build and optionally execute MESA parameter space grid.")
-    parser.add_argument("--out-dir", type=Path, default=Path("/workspace"), help="Output root directory")
+    parser.add_argument("--out-dir", type=Path, default=Path(__file__).resolve().parent.parent, help="Output root directory")
     parser.add_argument("--execute", action="store_true", help="Execute ./rn if MESA is installed")
     args = parser.parse_args()
 

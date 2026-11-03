@@ -1,9 +1,12 @@
-# 基于 MESA 的恒星演化参数空间模拟与 3D 交互探索系统
-> **Stellar Evolution Parameter Space Simulation & 3D Interactive Explorer**
+# 恒星演化参数空间半解析模拟与 3D 交互探索系统
+> **Stellar Evolution Parameter Space Semi-Analytic Simulation & 3D Interactive Explorer**
 
 [![GitHub Pages Deployment](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://jingbenllq.github.io/stellar-evolution-explorer/)
-[![MESA](https://img.shields.io/badge/MESA-r24.08.1-blue)](https://docs.mesastar.org/)
+[![Simulation](https://img.shields.io/badge/Model-semi--analytic-blue)](#)
 [![Three.js](https://img.shields.io/badge/Three.js-r128-black?logo=three.js)](https://threejs.org/)
+
+> **数据来源声明 (Data Source Notice)**：
+> 本项目所提供的恒星演化轨迹与内部剖面数据为半解析近似（Tout et al. 1996; Hurley et al. 2000; Kippenhahn et al. 2012），按 MESA ASCII 输出格式存储，非 MESA 数值积分微分方程求解结果。
 
 ---
 

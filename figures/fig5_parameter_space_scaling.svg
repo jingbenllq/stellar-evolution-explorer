@@ -77,8 +77,8 @@
 <text x="625" y="143.0" fill="#cbd5e1" font-size="11" text-anchor="end">10^11</text>
 <line x1="635" y1="214.7" x2="1085" y2="214.7" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
 <text x="1075" y="208.7" fill="#cbd5e1" font-size="11" text-anchor="end">Age of Universe (Hubble Time ~ 13.8 Gyr)</text>
-<path d="M101.5,513.3 L213.6,412.0 L315.8,312.1 L363.4,269.4 L407.1,230.1 L465.6,185.8 L513.1,95.6" fill="none" stroke="#38bdf8" stroke-width="2.4"/>
-<path d="M651.5,131.8 L763.6,247.8 L865.8,342.2 L913.4,386.2 L957.1,426.6 L1015.6,467.4 L1063.1,587.4" fill="none" stroke="#38bdf8" stroke-width="2.4"/>
+<path d="M101.5,513.3 L213.6,412.0 L315.8,312.1 L363.4,269.4 L407.1,230.1 L465.6,185.8 L513.1,143.1" fill="none" stroke="#38bdf8" stroke-width="2.4"/>
+<path d="M651.5,131.8 L763.6,247.8 L865.8,342.2 L913.4,386.2 L957.1,426.6 L1015.6,467.4 L1063.1,511.3" fill="none" stroke="#38bdf8" stroke-width="2.4"/>
 <circle cx="101.5" cy="513.3" r="4" fill="#38bdf8"/>
 <circle cx="651.5" cy="131.8" r="4" fill="#38bdf8"/>
 <circle cx="213.6" cy="412.0" r="4" fill="#38bdf8"/>
@@ -91,10 +91,10 @@
 <circle cx="957.1" cy="426.6" r="4" fill="#38bdf8"/>
 <circle cx="465.6" cy="185.8" r="4" fill="#38bdf8"/>
 <circle cx="1015.6" cy="467.4" r="4" fill="#38bdf8"/>
-<circle cx="513.1" cy="95.6" r="4" fill="#38bdf8"/>
-<circle cx="1063.1" cy="587.4" r="4" fill="#38bdf8"/>
-<path d="M101.5,519.3 L213.6,418.1 L315.8,318.2 L363.4,275.5 L407.1,236.2 L465.6,188.0 L513.1,97.8" fill="none" stroke="#4ade80" stroke-width="2.4"/>
-<path d="M651.5,122.1 L763.6,238.1 L865.8,332.6 L913.4,376.5 L957.1,416.9 L1015.6,463.9 L1063.1,583.9" fill="none" stroke="#4ade80" stroke-width="2.4"/>
+<circle cx="513.1" cy="143.1" r="4" fill="#38bdf8"/>
+<circle cx="1063.1" cy="511.3" r="4" fill="#38bdf8"/>
+<path d="M101.5,519.3 L213.6,418.1 L315.8,318.2 L363.4,275.5 L407.1,236.2 L465.6,188.0 L513.1,145.3" fill="none" stroke="#4ade80" stroke-width="2.4"/>
+<path d="M651.5,122.1 L763.6,238.1 L865.8,332.6 L913.4,376.5 L957.1,416.9 L1015.6,463.9 L1063.1,507.8" fill="none" stroke="#4ade80" stroke-width="2.4"/>
 <circle cx="101.5" cy="519.3" r="4" fill="#4ade80"/>
 <circle cx="651.5" cy="122.1" r="4" fill="#4ade80"/>
 <circle cx="213.6" cy="418.1" r="4" fill="#4ade80"/>
@@ -107,10 +107,10 @@
 <circle cx="957.1" cy="416.9" r="4" fill="#4ade80"/>
 <circle cx="465.6" cy="188.0" r="4" fill="#4ade80"/>
 <circle cx="1015.6" cy="463.9" r="4" fill="#4ade80"/>
-<circle cx="513.1" cy="97.8" r="4" fill="#4ade80"/>
-<circle cx="1063.1" cy="583.9" r="4" fill="#4ade80"/>
-<path d="M101.5,526.2 L213.6,425.0 L315.8,325.1 L363.4,282.4 L407.1,243.1 L465.6,190.6 L513.1,100.3" fill="none" stroke="#facc15" stroke-width="2.4"/>
-<path d="M651.5,111.0 L763.6,227.0 L865.8,321.5 L913.4,365.4 L957.1,405.8 L1015.6,459.9 L1063.1,579.8" fill="none" stroke="#facc15" stroke-width="2.4"/>
+<circle cx="513.1" cy="145.3" r="4" fill="#4ade80"/>
+<circle cx="1063.1" cy="507.8" r="4" fill="#4ade80"/>
+<path d="M101.5,526.2 L213.6,425.0 L315.8,325.1 L363.4,282.4 L407.1,243.1 L465.6,190.6 L513.1,147.9" fill="none" stroke="#facc15" stroke-width="2.4"/>
+<path d="M651.5,111.0 L763.6,227.0 L865.8,321.5 L913.4,365.4 L957.1,405.8 L1015.6,459.9 L1063.1,503.8" fill="none" stroke="#facc15" stroke-width="2.4"/>
 <circle cx="101.5" cy="526.2" r="4" fill="#facc15"/>
 <circle cx="651.5" cy="111.0" r="4" fill="#facc15"/>
 <circle cx="213.6" cy="425.0" r="4" fill="#facc15"/>
@@ -123,10 +123,10 @@
 <circle cx="957.1" cy="405.8" r="4" fill="#facc15"/>
 <circle cx="465.6" cy="190.6" r="4" fill="#facc15"/>
 <circle cx="1015.6" cy="459.9" r="4" fill="#facc15"/>
-<circle cx="513.1" cy="100.3" r="4" fill="#facc15"/>
-<circle cx="1063.1" cy="579.8" r="4" fill="#facc15"/>
-<path d="M101.5,528.3 L213.6,427.0 L315.8,327.1 L363.4,284.4 L407.1,245.1 L465.6,191.3 L513.1,101.1" fill="none" stroke="#f43f5e" stroke-width="2.4"/>
-<path d="M651.5,107.8 L763.6,223.8 L865.8,318.3 L913.4,362.2 L957.1,402.6 L1015.6,458.7 L1063.1,578.7" fill="none" stroke="#f43f5e" stroke-width="2.4"/>
+<circle cx="513.1" cy="147.9" r="4" fill="#facc15"/>
+<circle cx="1063.1" cy="503.8" r="4" fill="#facc15"/>
+<path d="M101.5,528.3 L213.6,427.0 L315.8,327.1 L363.4,284.4 L407.1,245.1 L465.6,191.3 L513.1,148.6" fill="none" stroke="#f43f5e" stroke-width="2.4"/>
+<path d="M651.5,107.8 L763.6,223.8 L865.8,318.3 L913.4,362.2 L957.1,402.6 L1015.6,458.7 L1063.1,502.6" fill="none" stroke="#f43f5e" stroke-width="2.4"/>
 <circle cx="101.5" cy="528.3" r="4" fill="#f43f5e"/>
 <circle cx="651.5" cy="107.8" r="4" fill="#f43f5e"/>
 <circle cx="213.6" cy="427.0" r="4" fill="#f43f5e"/>
@@ -139,8 +139,8 @@
 <circle cx="957.1" cy="402.6" r="4" fill="#f43f5e"/>
 <circle cx="465.6" cy="191.3" r="4" fill="#f43f5e"/>
 <circle cx="1015.6" cy="458.7" r="4" fill="#f43f5e"/>
-<circle cx="513.1" cy="101.1" r="4" fill="#f43f5e"/>
-<circle cx="1063.1" cy="578.7" r="4" fill="#f43f5e"/>
+<circle cx="513.1" cy="148.6" r="4" fill="#f43f5e"/>
+<circle cx="1063.1" cy="502.6" r="4" fill="#f43f5e"/>
 <text x="310.0" y="579" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">Initial Mass M_init / M_sun (log scale)</text>
 <text x="860.0" y="579" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle">Initial Mass M_init / M_sun (log scale)</text>
 <text x="32" y="315.0" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90, 32, 315.0)">ZAMS Luminosity log10(L / L_sun)</text>

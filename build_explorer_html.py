@@ -237,7 +237,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MESA 恒星演化参数空间交互探索器 (Stellar Evolution Parameter Space Explorer)</title>
+<title>恒星演化参数空间交互探索器 (Stellar Evolution Parameter Space Explorer)</title>
 <style>
   :root {
     --bg: #0b1021;
@@ -774,8 +774,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 <header>
   <div>
-    <h1>MESA 恒星演化参数空间交互探索器 (Stellar Evolution Parameter Space Explorer)</h1>
+    <h1>恒星演化参数空间交互探索器 (Stellar Evolution Parameter Space Explorer)</h1>
     <p>覆盖初始质量 M ∈ [0.3, 25] M☉ × 金属丰度 Z ∈ [0.0001, 0.03] 全网格 | 演化阶段同步对比与高精度物理诊断</p>
+    <p style="font-size: 12px; color: #94a3b8; margin-top: 3px;">演化轨迹与剖面为半解析近似（Tout 1996 / Hurley 2000），按 MESA 输出格式存储，非 MESA 数值积分结果</p>
   </div>
   <div class="header-actions">
     <div style="min-width:210px;">
@@ -843,9 +844,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <div class="timeline-track-container">
       <div class="timeline-ribbon-bar">
         <div class="timeline-ribbon-segment seg-ms" style="width: 20.1%;" title="主序阶段 (Main Sequence): 核心氢聚变 (Step 0-40)">主序 (MS)</div>
-        <div class="timeline-ribbon-segment seg-rgb" style="width: 20.1%;" title="红巨星阶段 (Red Giant): 氦核收缩+氢壳层燃烧 (Step 40-80)">红巨星 (RGB)</div>
-        <div class="timeline-ribbon-segment seg-hb" style="width: 19.6%;" title="中心氦燃烧阶段 (Core He Burning): 水平支/蓝环 (Step 80-119)">中心氦燃烧 (HB)</div>
-        <div class="timeline-ribbon-segment seg-agb" style="width: 20.1%;" title="壳层/晚期核燃烧 (Shell &amp; Adv Burning): AGB/晚期 (Step 119-159)">双壳层/晚期 (AGB)</div>
+        <div class="timeline-ribbon-segment seg-rgb" style="width: 20.1%;" title="巨星支阶段 (RGB/RSG): 氦核收缩+壳层燃烧 (Step 40-80)">巨星支 (RGB/RSG)</div>
+        <div class="timeline-ribbon-segment seg-hb" style="width: 19.6%;" title="中心氦燃烧阶段 (HB/CHeB): 水平支/蓝环/红超巨 (Step 80-119)">中心氦燃烧 (HB/CHeB)</div>
+        <div class="timeline-ribbon-segment seg-agb" style="width: 20.1%;" title="晚期核燃烧阶段 (AGB/C-O-Si): 晚期核聚变 (Step 119-159)">晚期燃烧 (AGB/C-O-Si)</div>
         <div class="timeline-ribbon-segment seg-end" style="width: 20.1%;" title="终态/核心坍缩 (Core Collapse / Remnant Cooling) (Step 159-199)">终态 / 坍缩</div>
       </div>
       <div class="timeline-markers-overlay" id="timelineMarkersOverlay"></div>

@@ -36,6 +36,31 @@ STAGE_NAMES = [
 ]
 
 
+def stage_names_for(mass: float) -> list[tuple[str, str]]:
+    """Return stage codes and labels tailored to the stellar mass regime."""
+    if mass >= 12.0:
+        s3 = ("HG_HeIgn", "赫氏间隙 / 核心氦点燃")
+        s5 = ("AdvBurn_COSi", "晚期碳氧硅燃烧")
+    elif mass >= 8.0:
+        s3 = ("HG_HeIgn", "赫氏间隙 / 核心氦点燃")
+        s5 = ("SuperAGB_CO", "晚期碳/氧燃烧（Super-AGB）")
+    elif mass >= 0.5:
+        s3 = ("RGB_HeIgn", "红巨星顶 / 氦点燃")
+        s5 = ("AGB", "AGB")
+    else:
+        s3 = ("Subgiant_HeCore", "亚巨星收缩 / 简并氦核")
+        s5 = ("HeCore_HShell", "氦核收缩 / 氢壳层")
+
+    return [
+        ("ZAMS", "零龄主序 (ZAMS)"),
+        ("TAMS", "主序拐点 (TAMS)"),
+        s3,
+        ("HB_CoreHe", "中心氦燃烧 / 水平支或蓝环 (Core He Burn)"),
+        s5,
+        ("EndState", "演化终点：白矮星冷却 / 铁核坍缩前夕 (Final State)"),
+    ]
+
+
 def zams_properties(mass: float, z: float) -> dict[str, float]:
     """
     Compute ZAMS luminosity (L/L_sun), radius (R/R_sun), Teff (K), central T_c (K),
@@ -54,7 +79,7 @@ def zams_properties(mass: float, z: float) -> dict[str, float]:
     elif mass < 20.0:
         log_L = math.log10(1.4 * (mass ** 3.5)) + z_lum_shift
     else:
-        log_L = math.log10(32000.0 * mass) + z_lum_shift
+        log_L = math.log10(1.4 * (mass ** 3.5)) + z_lum_shift
 
     # ZAMS Radius scaling with metallicity dependence
     z_rad_shift = 0.05 * zeta
@@ -329,8 +354,8 @@ def simulate_model_track(mass: float, z: float, n_steps: int = 240) -> dict:
             c_he4[i] = y_init + x_init * u
             c_c12[i] = z * 0.18
             c_o16[i] = z * 0.45
-        elif s_val <= 2.0:
-            # Post-MS inert He core contraction
+        elif s_val <= 3.0:
+            # Post-MS inert He core contraction / RGB / He ignition
             c_h1[i] = 0.0
             c_he4[i] = 1.0 - z
             c_c12[i] = z * 0.18
@@ -342,7 +367,7 @@ def simulate_model_track(mass: float, z: float, n_steps: int = 240) -> dict:
                 c_c12[i] = z * 0.18
                 c_o16[i] = z * 0.45
             else:
-                u = (s_val - 2.0) / 1.5
+                u = (s_val - 3.0) / 0.5
                 c_he4[i] = max(0.0, (1.0 - z) * (1.0 - u))
                 c_c12[i] = 0.32 * u
                 c_o16[i] = 0.68 * (1.0 - z) * u
@@ -431,7 +456,7 @@ def simulate_model_track(mass: float, z: float, n_steps: int = 240) -> dict:
     profiles = []
     q_grid = np.linspace(0.005, 1.0, 80)  # 80 radial zones from center to surface
 
-    for stage_idx, (stage_code, stage_label) in enumerate(STAGE_NAMES):
+    for stage_idx, (stage_code, stage_label) in enumerate(stage_names_for(mass)):
         idx = stage_indices[stage_idx]
         m_star = float(mass_arr[idx])
         r_star_log = float(log_R_arr[idx])
@@ -475,7 +500,7 @@ def simulate_model_track(mass: float, z: float, n_steps: int = 240) -> dict:
                 eps_nuc_p[j] = (10.0 ** log_L_arr[idx]) * math.exp(-(((q - core_q) / 0.05) ** 2))
             elif stage_idx in (2, 3):  # RGB / Core He Burning
                 q_he = max(0.18, he_core_m[idx] / m_star)
-                q_co = (0.5 * q_he) if (stage_idx == 3 and mass >= 0.5) else 0.0
+                q_co = 0.0
                 if q < q_co:
                     c12_p[j] = 0.32
                     o16_p[j] = 0.66
@@ -645,7 +670,7 @@ def write_mesa_ascii_logs(model_data: dict, logs_dir: Path) -> None:
     hist_lines = [
         "                  1                   2                   3",
         "        version_number            compiler               build",
-        '             "r24.08.1"          "gfortran"             "MESA-SDK"',
+        '       "synthetic-1.0"            "python" "stellar_grid_engine"',
         "",
         " ".join(f"{i+1:>20d}" for i in range(len(cols))),
         " ".join(f"{c:>20s}" for c in cols),
@@ -707,7 +732,7 @@ class MESALogsReader:
 
 
 def main() -> None:
-    workspace = Path("/workspace")
+    workspace = Path(__file__).resolve().parent
     build_grid_directories(workspace, execute_mesa=False)
 
     all_models = []
@@ -718,10 +743,10 @@ def main() -> None:
             model = simulate_model_track(mass, z, n_steps=200)
             all_models.append(model)
 
-            # Write MESA ASCII LOGS into mesa_grid_runs/M*_Z*/LOGS if directory exists
+            # Write MESA ASCII LOGS into mesa_grid_runs/M*_Z*/LOGS for all 28 models
             run_dir = workspace / "mesa_grid_runs" / model["model_id"]
-            if run_dir.exists():
-                write_mesa_ascii_logs(model, run_dir / "LOGS")
+            run_dir.mkdir(parents=True, exist_ok=True)
+            write_mesa_ascii_logs(model, run_dir / "LOGS")
 
             # Extract stage summary rows for CSV export
             for p in model["profiles"]:

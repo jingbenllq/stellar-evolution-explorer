@@ -15,8 +15,10 @@ from __future__ import annotations
 
 import json
 import math
-import subprocess
+import os
 from pathlib import Path
+import shutil
+import subprocess
 
 MASS_COLORS = {
     0.3: "#ff595e",
@@ -503,9 +505,35 @@ def build_fig5_scaling_laws(data: dict) -> str:
     return "\n".join(out)
 
 
-def convert_svg_to_png(svg_path: Path, png_path: Path, width: int, height: int) -> None:
+def find_browser_executable() -> str | None:
+    for name in ["google-chrome", "chrome", "chromium", "chromium-browser", "msedge"]:
+        path = shutil.which(name)
+        if path:
+            return path
+    candidates = [
+        Path("/usr/bin/google-chrome"),
+        Path("/usr/bin/chromium"),
+        Path("/usr/bin/chromium-browser"),
+        Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe"),
+        Path(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"),
+        Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
+        Path(r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"),
+        Path(os.path.expandvars(r"%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe")),
+        Path(os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\Application\msedge.exe")),
+    ]
+    for p in candidates:
+        if p.is_file():
+            return str(p)
+    return None
+
+
+def convert_svg_to_png(svg_path: Path, png_path: Path, width: int, height: int) -> bool:
+    browser = find_browser_executable()
+    if not browser:
+        print(f"[Warning] No Chrome/Edge browser found for PNG conversion of {svg_path.name}")
+        return False
     cmd = [
-        "/usr/bin/google-chrome",
+        browser,
         "--headless",
         "--disable-gpu",
         "--no-sandbox",
@@ -513,11 +541,16 @@ def convert_svg_to_png(svg_path: Path, png_path: Path, width: int, height: int) 
         f"--screenshot={png_path}",
         f"file://{svg_path.resolve()}",
     ]
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=25.0)
+        return True
+    except Exception as e:
+        print(f"[Warning] PNG render failed for {svg_path.name}: {e}")
+        return False
 
 
 def main() -> None:
-    workspace = Path("/workspace")
+    workspace = Path(__file__).resolve().parent
     fig_dir = workspace / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
 
@@ -535,8 +568,11 @@ def main() -> None:
         svg_path = fig_dir / f"{name}.svg"
         png_path = fig_dir / f"{name}.png"
         svg_path.write_text(svg_content, encoding="utf-8")
-        convert_svg_to_png(svg_path, png_path, w, h)
-        print(f"[Generated] {svg_path.name} & {png_path.name}")
+        ok = convert_svg_to_png(svg_path, png_path, w, h)
+        if ok and png_path.exists():
+            print(f"[Generated] {svg_path.name} & {png_path.name}")
+        else:
+            print(f"[Generated] {svg_path.name} (PNG skipped/failed)")
 
 
 if __name__ == "__main__":
