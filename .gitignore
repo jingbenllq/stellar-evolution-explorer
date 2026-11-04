@@ -1,7 +1,5 @@
-# Python cache
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Temporary agent scratch / logs
-.agents/
+*.pyc
+.venv/
+venv/
+.DS_Store

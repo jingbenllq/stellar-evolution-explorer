@@ -1,77 +1,54 @@
 ! ==============================================================================
-! MESA inlist_project Template: Massive Stars (15.0 - 25.0 M_sun)
-! Evolves through H -> He -> C -> Ne -> O -> Si burning to Fe-core infall (CCSN)
+! MESA Inlist Template: Massive Stars & Core-Collapse Progenitors (10 - 25+ M_sun)
+! Compatible with Modern MESA Releases (r22.11.1 / r24.03.1)
 ! ==============================================================================
 
 &star_job
-    create_pre_main_sequence_model = .true.
-    pre_ms_T_c = 5.0d5
+  create_pre_main_sequence_model = .true.
+  pre_ms_T_c = 5.0d5
 
-    save_model_when_terminate = .true.
-    save_model_filename = 'pre_ccsn.mod'
+  change_net = .true.
+  new_net_name = 'approx21.net'
 
-    ! 21-isotope alpha-chain network from H through Fe/Ni core collapse
-    change_net = .true.
-    new_net_name = 'approx21.net'
+  save_model_when_terminate = .true.
+  save_model_filename = 'pre_ccsn_infall.mod'
 
-    use_Type2_opacities = .true.
-    Zbase = {INITIAL_Z}
-
-    pgstar_flag = .false.
+  pgstar_flag = .false.
 / ! end of star_job namelist
 
-
 &eos
+  ! HELM + Skye EOS handles high-T e+e- pair production & Fe photodisintegration
 / ! end of eos namelist
 
-
 &kap
-    Zbase = {INITIAL_Z}
-    kap_file_prefix = 'a09'
+  use_Type2_opacities = .true.
+  Zbase = {INITIAL_Z}
 / ! end of kap namelist
 
-
 &controls
-    ! --------------------------------------------------------------------------
-    ! 1. Initial Parameter Space Coordinates
-    ! --------------------------------------------------------------------------
-    initial_mass = {INITIAL_MASS}
-    initial_z = {INITIAL_Z}
-    initial_y = {INITIAL_Y}
+  initial_mass = {INITIAL_MASS}
+  initial_z = {INITIAL_Z}
 
-    ! --------------------------------------------------------------------------
-    ! 2. Convection, Ledoux, Semiconvection & Overshooting
-    ! --------------------------------------------------------------------------
-    mixing_length_alpha = 1.5d0
-    use_Ledoux_criterion = .true.
-    alpha_semiconvection = 0.01d0
+  ! Convection & Mixing (MLT++ for radiation-dominated supergiant envelopes)
+  mixing_length_alpha = 1.8d0
+  use_Ledoux_criterion = .true.
+  alpha_semiconvection = 0.1d0
+  okay_to_reduce_gradT_excess = .true.
 
-    overshoot_scheme(1) = 'exponential'
-    overshoot_zone_type(1) = 'any'
-    overshoot_zone_loc(1) = 'core'
-    overshoot_bdy_loc(1) = 'top'
-    overshoot_f(1) = {OVERSHOOT_F}
-    overshoot_f0(1) = 0.004d0
+  ! Core Convective Overshooting
+  overshoot_scheme(1) = 'exponential'
+  overshoot_zone_type(1) = 'any'
+  overshoot_zone_loc(1) = 'core'
+  overshoot_bdy_loc(1) = 'top'
+  overshoot_f(1) = 0.020d0
+  overshoot_f0(1) = 0.005d0
 
-    ! --------------------------------------------------------------------------
-    ! 3. Massive Star Winds (Dutch scheme: Vink + de Jager + Nugis & Lamers)
-    ! --------------------------------------------------------------------------
-    hot_wind_scheme = 'Dutch'
-    cool_wind_RGB_scheme = 'Dutch'
-    cool_wind_AGB_scheme = 'Dutch'
-    Dutch_scaling_factor = 0.8d0
+  ! Line-driven & Supergiant Winds (Dutch prescription: Vink + de Jager + Nugis/Lamers)
+  hot_wind_scheme = 'Dutch'
+  cool_wind_RGB_scheme = 'Dutch'
+  cool_wind_AGB_scheme = 'Dutch'
+  Dutch_scaling_factor = 0.8d0
 
-    ! --------------------------------------------------------------------------
-    ! 4. Advanced Burning Resolution & Core Collapse Stopping Condition
-    ! --------------------------------------------------------------------------
-    varcontrol_target = 1d-3
-    mesh_delta_coeff = 0.8d0
-
-    ! Terminate when iron core infall velocity reaches 1000 km/s (Core Collapse)
-    fe_core_infall_limit = 1d8     ! cm/s
-
-    history_interval = 2
-    profile_interval = 25
-    max_num_profile_models = 120
-    terminal_interval = 10
+  ! Core-Collapse Stopping Condition (Iron Core Infall Velocity > 1000 km/s)
+  fe_core_infall_limit = 1.0d8
 / ! end of controls namelist

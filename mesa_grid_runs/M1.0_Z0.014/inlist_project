@@ -1,0 +1,57 @@
+! ==============================================================================
+! MESA Inlist Template: Low & Intermediate Mass Stars (0.3 - 8.0 M_sun)
+! Compatible with Modern MESA Releases (r22.11.1 / r24.03.1)
+! ==============================================================================
+
+&star_job
+  create_pre_main_sequence_model = .true.
+  pre_ms_T_c = 3.0d5
+
+  change_net = .true.
+  new_net_name = 'co_burn.net'
+
+  save_model_when_terminate = .true.
+  save_model_filename = 'final_wd_model.mod'
+
+  pgstar_flag = .false.
+/ ! end of star_job namelist
+
+&eos
+  ! Default MESA EOS (FreeEOS + HELM + Skye + CMS + PC)
+/ ! end of eos namelist
+
+&kap
+  use_Type2_opacities = .true.
+  Zbase = 0.014d0
+/ ! end of kap namelist
+
+&controls
+  initial_mass = 1.00d0
+  initial_z = 0.014d0
+
+  ! Convection & Mixing Length Theory (MLT)
+  mixing_length_alpha = 2.0d0
+  use_Ledoux_criterion = .true.
+  alpha_semiconvection = 0.01d0
+  thermohaline_coeff = 2.0d0
+
+  ! Exponential Convective Overshooting (Modern MESA indexed syntax)
+  overshoot_scheme(1) = 'exponential'
+  overshoot_zone_type(1) = 'any'
+  overshoot_zone_loc(1) = 'core'
+  overshoot_bdy_loc(1) = 'top'
+  overshoot_f(1) = 0.016d0
+  overshoot_f0(1) = 0.004d0
+
+  ! Stellar Winds (RGB Reimers + AGB Bloecker)
+  cool_wind_full_on_T = 0.8d4
+  hot_wind_full_on_T = 1.2d4
+  cool_wind_RGB_scheme = 'Reimers'
+  Reimers_scaling_factor = 0.5d0
+  cool_wind_AGB_scheme = 'Blocker'
+  Blocker_scaling_factor = 0.05d0
+
+  ! Stopping Conditions (White Dwarf Cooling Sequence)
+  log_L_lower_limit = -2.0d0
+  max_age = 1.0d12
+/ ! end of controls namelist

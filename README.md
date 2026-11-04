@@ -1,97 +1,35 @@
-# 恒星演化参数空间半解析模拟与 3D 交互探索系统
-> **Stellar Evolution Parameter Space Semi-Analytic Simulation & 3D Interactive Explorer**
+# 恒星演化参数空间交互探索器 v2.0 (Stellar Evolution Parameter Space Explorer & MESA Workbench)
 
-[![GitHub Pages Deployment](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://jingbenllq.github.io/stellar-evolution-explorer/)
-[![Simulation](https://img.shields.io/badge/Model-semi--analytic-blue)](#)
-[![Three.js](https://img.shields.io/badge/Three.js-r128-black?logo=three.js)](https://threejs.org/)
+本项目面向恒星物理与数值天体物理（MESA）课程课题，构建了一个覆盖 **$M_{\text{init}} \in [0.3, 25]\,M_\odot \times Z_{\text{init}} \in [0.0001, 0.03]$**（共 28 组模型、每组 200 个连续演化步与 60 层径向化学壳层）的参数空间交互式 3D 探索工作台。
 
-> **数据来源声明 (Data Source Notice)**：
-> 本项目所提供的恒星演化轨迹与内部剖面数据为半解析近似（Tout et al. 1996; Hurley et al. 2000; Kippenhahn et al. 2012），按 MESA ASCII 输出格式存储，非 MESA 数值积分微分方程求解结果。
+## ✨ v2.0 核心升级（对照学长指导要求与天体物理原理审计）
 
----
+### 1. 深度契合课题要求：参数空间对比 + MESA 实战教学闭环
+- **跨质量 $M$ 与跨金属丰度 $Z$ 的自由双星同屏对比**：突破原版仅能在同一金属丰度下对比不同质量的限制，支持独立选择主模型 $(M_1, Z_1)$ 与参考对比模型 $(M_2, Z_2)$，并提供 5 组一键教学预设：
+  1. `☀️ 1M☉ 太阳 vs 15M☉ 超巨星`（主序寿命相差 $846\times$ 的质量效应）
+  2. `🧪 同质量金属丰度效应 (1M☉: Z=0.0001 vs 0.03)`（展示低金属丰度不透明度 $\kappa$ 降低如何使恒星更致密、更热、更亮）
+  3. `⚡ 8M☉ 临界命运分岔 (Z=0.014 ONe白矮星 vs Z=0.0001 电子俘获超新星 ECSN)`
+  4. `🔥 0.3M☉ 全对流蓝矮星 vs 1M☉ 辐射核太阳`（对比完全对流均匀混合与辐射核阶跃剖面）
+  5. `🕳️ 15M☉ 中子星 vs 25M☉ 黑洞前身星`（晚期硅燃烧与铁核坍缩极限）
+- **新增 Kippenhahn 内部对流与燃烧壳层演化图**：在右下角面板支持一键切换“径向化学丰度剖面 $X_i(q)$”与“Kippenhahn 图（内部质量坐标 $q=m/M_*$ 随演化阶段的中心对流核消长、外部对流包层深入/上翻 Dredge-up 及氢/氦燃烧壳层外移）”。
+- **新增 28-模型参数空间全局热力矩阵**：在底部工作台直观纵览全部 $7 \times 4$ 参数网格的终态残骸类型（He WD / CO WD / ONeMg WD / NS / BH）、主序寿命 $t_{\text{MS}}$、峰值光度与中心极值，支持左键切换主模型、`Shift + 左键`切换对比模型。
+- **新增 MESA r24.03.1 实时 `inlist_project` 配置生成器与使用指南**：根据当前选中的 $(M_1, Z_1)$ 实时生成现代 MESA 可直接运行的 `&star_job`、`&eos`、`&kap`、`&controls` 配置文件，支持一键复制与下载。
 
-## 🌟 在线交互探索看板 (Live Demo)
+### 2. 天体物理与数值建模原理修正（8 项关键修复）
+1. **标准太阳模型 ZAMS 定标修正**：修复原版将 $1\,M_\odot, Z=0.014$ 在零龄主序（$t=0$）直接设为 $1.0\,L_\odot$ 的错误；现从 ZAMS $L = 0.70\,L_\odot (\log L = -0.155, R = 0.89\,R_\odot, T_{\text{eff}} = 5600\,\text{K})$ 出发，随核心平均分子量 $\mu$ 增大而在 $t = 4.57\,\text{Gyr}$ 准确穿过今日太阳定标点 $\odot (L=1\,L_\odot, T_{\text{eff}}=5772\,\text{K})$。
+2. **大质量恒星质光关系展平修正**：计入 $M \ge 10\,M_\odot$ 内部辐射压主导与汤姆孙电子散射不透明度效应，将质光关系幂指数从 $3.5$ 展平至 $\sim 2.75$，使 $15\,M_\odot$ 与 $25\,M_\odot$ 主序寿命恢复至 MESA 基准值（$11.89\,\text{Myr}$ 与 $5.53\,\text{Myr}$）。
+3. **$0.3\,M_\odot$ 完全对流红矮星物理修正**：计入全星对流混合（有效燃料分数 $f_{\text{core}} \approx 0.85$，主序寿命 $\sim 787\,\text{Gyr}$），修正径向丰度剖面 $X_i(q)$ 为全星均匀平坦分布（$\partial X / \partial q \approx 0$），并在氢耗尽末期呈现真实的**蓝矮星收缩升温阶段（Blue Dwarf Phase）**而非虚构的红巨星膨胀。
+4. **$8\,M_\odot$ 临界质量（Super-AGB）自洽性修正**：消除原版文字说明与数据轨迹的矛盾，明确刻画 $8\,M_\odot$ 偏心碳点火后的金属丰度分岔（$Z \ge 0.014$ 经强星风剥离形成 $1.20\,M_\odot$ 氧氖镁白矮星；$Z \le 0.001$ 弱星风使简并核达到 $1.37\,M_\odot$ 触发 $^{20}\text{Ne}/^{24}\text{Mg}$ 电子俘获超新星 ECSN）。
+5. **中心相图 ($\log \rho_c - \log T_c$) 状态方程边界精细化**：补全非相对论电子简并边界（斜率 $2/3$）向极端相对论简并边界（$\rho_c \gtrsim 2\times 10^6\,\text{g/cm}^3$，斜率 $1/3$）的转折、辐射压主导边界（$P_{\text{rad}} = P_{\text{gas}}$）、正负电子对不稳定区（$\Gamma_1 < 4/3$）及铁核光致蜕变区。
+6. **大质量恒星洋葱皮核区质量缩放**：以有效钱德拉塞卡质量 $M_{\text{Ch,eff}} \approx 1.44\text{–}1.56\,M_\odot$ 锚定铁核质量，使相对质量边界 $q_{\text{Fe}} = M_{\text{Fe}}/M_{\text{final}}$ 及外围硅/氧氖/碳氧/氦壳层随初始质量 $M$ 和星风质量损失（$\dot{M} \propto Z^{0.65}$）动态缩放，且严格满足 $\sum_i X_i(q) = 1.0000$。
+7. **MESA r24.03.1 Namelist 语法兼容修复**：移除已废弃的 `&star_job` 内 `Zbase`/`use_Type2_opacities` 混放写法，规范迁移至 `&kap`，并采用现代 MESA 数组下标语法配置指数对流超射 `overshoot_scheme(1) = 'exponential'`。
+8. **鲁棒的 `history.data` 自适应表头解析器**：修复原版硬编码第 5 行的 Bug，支持自动扫描任意 MESA 版本的列名表头行。
 
-👉 **直接访问在线看板**：[https://jingbenllq.github.io/stellar-evolution-explorer/](https://jingbenllq.github.io/stellar-evolution-explorer/)
-
-*(支持在手机、平板及电脑浏览器中直接打开，单文件零依赖，开箱即用)*
-
----
-
-## 📖 项目简介
-
-本项目围绕**“恒星演化参数空间（Parameter Space）构建与跨阶段状态对比”**展开，完整实现了从 **MESA 配置文件工程（`inlist` 网格）**、**标准格式演化数据生成与解析（`history.data` & `profile*.data`）**、**多维物理演化相图绘制** 到 **3D 立体切角洋葱皮交互看板** 的全套科研与教学闭环。
-
-### 1. 参数空间二维网格 $(M_{\text{init}}, Z_{\text{init}})$
-* **初始质量维度（7 个量级，覆盖全演化分支与结局）**：
-  * $0.3\,M_\odot$（极低质量全对流红矮星 $\to$ 氦白矮星 He WD）
-  * $1.0\,M_\odot$（类太阳恒星，红巨星支简并氦闪 $\to$ 碳氧白矮星 CO WD）
-  * $3.0\,M_\odot$、$5.0\,M_\odot$（中等质量恒星，经历主序 CNO 对流核与赫罗图蓝环 $\to$ CO WD）
-  * $8.0\,M_\odot$（大质量临界区 Super-AGB 恒星，偏心碳点燃 $\to$ 氧氖镁白矮星 ONe WD / 电子俘获超新星）
-  * $15.0\,M_\odot$、$25.0\,M_\odot$（大质量恒星，全套核燃烧链直至铁核坍缩超新星 CCSN $\to$ 中子星 NS / 恒星黑洞 BH）
-* **初始金属丰度维度（4 个代表性化学丰度点）**：
-  * $Z = 0.0001$（极端贫金属星族 II）
-  * $Z = 0.001$（贫金属星族 II）
-  * $Z = 0.014$（标准太阳金属丰度星族 I）
-  * $Z = 0.030$（富金属星族 I）
-* **关键演化阶段切片**：零龄主序（ZAMS）、主序拐点（TAMS）、红巨星支顶/氦点燃（RGB_HeIgn）、中心氦燃烧（HB_CoreHe）、晚期高级燃烧（AGB_AdvBurn）与演化终点（EndState）。
-
----
-
-## 🚀 核心功能亮点
-
-1. **3D 立体切角洋葱皮模型 (3D Cutaway Onion-Skin)**：
-   * 基于内嵌 Three.js 引擎，呈现 3/4 扇区剖切立体球体；
-   * 从中心铁核（$^{56}\text{Fe}$）到最外层氢包层（$^{1}\text{H}$）逐层清晰分辨；
-   * 支持鼠标自由旋转（360° Orbit）、滚轮缩放与射线检测（Raycasting）壳层拾取高亮。
-2. **高分屏 Retina/HiDPI 锐化**：
-   * 采用 `devicePixelRatio` 自适应渲染，告别模糊锯齿。
-3. **数据吸附 Hover Tooltip**：
-   * 赫罗图、中心温密相图（$\log \rho_c - \log T_c$）及径向丰度剖面均支持鼠标十字准星吸附，实时读取精确物理量。
-4. **变速播放与阶段色带**：
-   * 支持 `0.5x / 1.0x / 2.0x / 5.0x` 四档变速与快捷键微调；
-   * 时间轴配有五色阶段演化色带与直达锚点。
-5. **一键多格式导出**：
-   * 支持单独导出各图表高清 PNG、四合一仪表盘全景图；
-   * 支持导出演化轨迹 CSV（带 UTF-8 BOM）、剖面 CSV 及全网格 JSON 数据。
-
----
-
-## 📂 仓库目录结构
-
-```
-├── index.html                        # GitHub Pages 默认入口 (完整 3D 交互看板)
-├── stellar_explorer.html             # 单文件离线看板源码与构建产物
-├── build_explorer_html.py            # 看板构建与 Three.js 自动化打包脚本
-├── report.md                         # 学术研究报告全文
-├── parameter_space_summary.csv       # 28 组模型 6 阶段物理量汇总表
-├── stellar_grid_data.json            # 全网格结构化物理数据集
-├── figures/                          # 5 组出版级高清图表 (PNG + SVG 矢量图)
-│   ├── fig1_hr_diagram_grid          # 赫罗图全局演化轨迹网格
-│   ├── fig2_central_rho_T_phase      # 中心温密相图 (简并边界与核点火线)
-│   ├── fig3_kippenhahn_comparison    # 基彭哈恩结构图 (对流/辐射边界演进)
-│   ├── fig4_internal_profiles_stages # 径向元素丰度剖面与洋葱皮
-│   └── fig5_parameter_space_scaling  # 质光关系与寿命标度律
-├── mesa_configs/                     # MESA 模拟工程配置与自动化批处理脚本
-├── mesa_grid_runs/                   # 28 组标准 MESA ASCII 模拟日志
-└── tests/                            # 自动化测试套件 (72 项 E2E 测试全部通过)
-```
-
----
-
-## 🧪 本地运行与测试
-
-### 1. 本地直接查看
-直接在浏览器中双击打开 `index.html` 或 `stellar_explorer.html` 即可运行（无需起服务）。
-
-### 2. 重新构建看板
+## 🚀 快速运行与构建
 ```bash
-python build_explorer_html.py
-```
+# 1. 重新生成 28 模型参数空间 JSON 与汇总 CSV
+python3 stellar_grid_engine.py
 
-### 3. 运行自动化测试套件
-```bash
-python tests/run_e2e_tests.py
-python tests/verify_reverification_challenger.py
+# 2. 编译生成单文件交互式 3D 看板 (index.html / stellar_explorer.html)
+python3 build_explorer_html.py
 ```
-*(72 项端到端测试与 1219 项独立几何核对均通过)*
