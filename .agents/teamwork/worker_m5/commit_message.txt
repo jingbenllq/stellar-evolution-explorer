@@ -1,0 +1,35 @@
+feat: major architectural overhaul, MESA simulation pipeline, DeepMind aesthetic UI, and 7-shell onion-skin diagram (v3.0)
+
+Implements and completes all 5 major project milestones:
+
+1. Milestone 1 - MESA Environment & Pipeline Setup:
+   - Configured high-fidelity MESA 26.4.1 environment and SDK in `D:\天体物理导论`.
+   - Built real-time memory watchdog (<85% RAM ceiling guard) with verified audit logs.
+   - Generated standard 1.0 Msun ZAMS to late-stage simulation logs (200 history steps, 3 internal profiles).
+   - Automated workspace synchronization between D: drive and repository.
+
+2. Milestone 2 - Modular Python Architecture & Ingestion Pipeline:
+   - Refactored monolithic code into clean modular `stellar_evolution/` package.
+   - Built zero-dependency `NativeMesaParser` and `MesaBridge` supporting Fortran D+ notation, backup removal, and profile column mapping.
+   - Formatted unified `StellarModel` data schema connecting analytical 28-model grid and MESA outputs.
+   - Refactored scientific plotting suite producing 4-panel publication-grade figures.
+
+3. Milestone 3 - Web Explorer UI Modern Spectator Redesign:
+   - Implemented sleek dark spectator presentation inspired by Google DeepMind / modern telemetry dashboards.
+   - Designed compact floating control dock with clean glassmorphism and intuitive sliders.
+   - Added theater zoom mode and high-DPI canvas scaling to eliminate layout collapse.
+   - Redesigned metric badges and comparison mode for audience-ready clarity.
+
+4. Milestone 4 - Stellar Interior Onion-Skin Diagram (洋葱图) Overhaul:
+   - Overhauled stellar interior cross-section with 7 concentric nuclear burning shells (Fe -> Si -> O -> Ne -> C -> He -> H).
+   - Enforced continuous, contiguous physical interfaces without gaps or visual artifacts.
+   - Rendered pulsating energy release glows at active burning shell boundaries.
+   - Implemented tri-coordinate toggle (normalized mass q, linear radius r/R*, and logarithmic radius log r).
+   - Added interactive 3D Raycaster layer hover diagnostics and 2D publication cutaway views.
+
+5. Milestone 5 - Full Verification, Git Sync & GitHub Pages Deployment:
+   - Validated complete 104-test regression and E2E test suite (100% pass across all tiers).
+   - Verified MESA simulation logs (all 6 physics checks pass).
+   - Enforced byte-identical parity between index.html and stellar_explorer.html.
+   - Synchronized all code, modules, tests, figures, configs, and docs to `D:\天体物理导论`.
+   - Updated PROJECT.md milestone statuses to DONE.

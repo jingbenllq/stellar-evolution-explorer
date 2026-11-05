@@ -1,0 +1,31 @@
+! ==============================================================================
+! MESA 26.4.1 Inlist Project: 1 M_sun Evolution Pre-MS to ZAMS
+! Reference: d:\QQ\MESA_26.4.1_中文安装与1太阳质量测试.md
+! ==============================================================================
+
+&star_job
+  create_pre_main_sequence_model = .true.
+  save_model_when_terminate = .true.
+  save_model_filename = '1M_zams.mod'
+  pgstar_flag = .false.
+/ ! end of star_job namelist
+
+&controls
+  initial_mass = 1.0 ! in Msun units
+  initial_z = 0.014d0 ! Solar metallicity Z_sun
+
+  ! Stopping condition: reach ZAMS (nuclear luminosity matches surface luminosity)
+  stop_near_zams = .true.
+  Lnuc_div_L_zams_limit = 0.99d0
+
+  ! Logging intervals
+  history_interval = 1
+  profile_interval = 50
+  max_num_profile_models = 100
+  terminal_interval = 10
+  write_header_frequency = 10
+
+  ! Standard columns lists
+  history_columns_file = 'history_columns.list'
+  profile_columns_file = 'profile_columns.list'
+/ ! end of controls namelist

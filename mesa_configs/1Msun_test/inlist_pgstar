@@ -1,0 +1,7 @@
+! ==============================================================================
+! MESA 26.4.1 Inlist PGSTAR: Headless / Scripting Mode
+! ==============================================================================
+
+&pgstar
+  ! Headless execution - graphical display disabled for background pipelines
+/ ! end of pgstar namelist

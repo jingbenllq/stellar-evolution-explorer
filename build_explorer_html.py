@@ -22,28 +22,28 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     :root {
-      --bg-base: #090d16;
-      --bg-surface-1: #111827;
-      --bg-surface-2: #182236;
-      --bg-surface-3: #22304a;
-      --bg-glass: rgba(17, 24, 39, 0.84);
+      --bg-base: #070a13;
+      --bg-surface-1: #0d1322;
+      --bg-surface-2: #141d34;
+      --bg-surface-3: #1e2945;
+      --bg-glass: rgba(13, 19, 34, 0.88);
       --border-subtle: rgba(148, 163, 184, 0.14);
-      --border-focus: rgba(138, 180, 248, 0.48);
+      --border-focus: rgba(56, 189, 248, 0.50);
       --text-primary: #f1f5f9;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --g-blue: #8ab4f8;
-      --g-blue-strong: #4285f4;
+      --g-blue: #38bdf8;
+      --g-blue-strong: #0284c7;
       --g-cyan: #38bdf8;
-      --g-violet: #c58af9;
-      --g-green: #81c995;
-      --g-amber: #fdd663;
-      --g-coral: #f28b82;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-      --radius-sm: 8px;
-      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
-      --transition-fast: 180ms cubic-bezier(0.2, 0, 0, 1);
+      --g-violet: #818cf8;
+      --g-green: #10b981;
+      --g-amber: #f59e0b;
+      --g-coral: #ef4444;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      --transition-fast: 160ms cubic-bezier(0.2, 0, 0, 1);
     }
 
     * {
@@ -55,12 +55,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     body {
       background-color: var(--bg-base);
       background-image:
-        radial-gradient(circle at 12% 8%, rgba(66, 133, 244, 0.10), transparent 36%),
-        radial-gradient(circle at 88% 12%, rgba(197, 138, 249, 0.08), transparent 36%),
-        radial-gradient(circle at 50% 95%, rgba(56, 189, 248, 0.06), transparent 40%);
+        radial-gradient(circle at 12% 8%, rgba(56, 189, 248, 0.09), transparent 38%),
+        radial-gradient(circle at 88% 12%, rgba(129, 140, 248, 0.08), transparent 40%),
+        radial-gradient(circle at 50% 95%, rgba(16, 185, 129, 0.05), transparent 45%);
       color: var(--text-primary);
       font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.5;
       min-height: 100vh;
       overflow-x: hidden;
@@ -71,16 +71,16 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       font-variant-numeric: tabular-nums;
     }
 
-    /* Top Sticky Glass Header */
+    /* Top Sticky Glass Header (Google DeepMind Dark Aesthetic) */
     .app-header {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: var(--bg-glass);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 10px 20px;
+      background: rgba(7, 10, 19, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 20px;
     }
 
     .header-inner {
@@ -100,17 +100,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     .brand-orb {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      background: radial-gradient(circle at 32% 32%, #fff7ed 0%, #fbbf24 35%, #ea580c 72%, #7c2d12 100%);
-      box-shadow: 0 0 18px rgba(251, 191, 36, 0.45);
+      background: radial-gradient(circle at 32% 32%, #ffffff 0%, #38bdf8 45%, #0369a1 80%, #070a13 100%);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
       flex-shrink: 0;
       position: relative;
     }
 
     .brand-title {
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: #ffffff;
@@ -121,17 +121,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     .version-pill {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
-      padding: 2px 8px;
+      padding: 1px 7px;
       border-radius: 999px;
-      background: rgba(129, 201, 149, 0.14);
+      background: rgba(16, 185, 129, 0.14);
       color: var(--g-green);
-      border: 1px solid rgba(129, 201, 149, 0.32);
+      border: 1px solid rgba(16, 185, 129, 0.32);
     }
 
     .brand-sub {
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--text-secondary);
       display: flex;
       align-items: center;
@@ -143,12 +143,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: rgba(138, 180, 248, 0.10);
-      border: 1px solid rgba(138, 180, 248, 0.22);
-      color: var(--g-blue);
-      padding: 2px 9px;
+      background: rgba(56, 189, 248, 0.10);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      color: var(--g-cyan);
+      padding: 1px 8px;
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 10.5px;
     }
 
     .header-actions {
@@ -158,15 +158,15 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       flex-wrap: wrap;
     }
 
-    /* Buttons & Segmented Controls (Google Material 3 style) */
+    /* Buttons & Segmented Controls */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 6px 13px;
+      gap: 5px;
+      padding: 5px 12px;
       border-radius: 999px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 500;
       color: var(--text-primary);
       background: var(--bg-surface-2);
@@ -184,53 +184,69 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #4285f4 0%, #3b82f6 100%);
+      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 3px 12px rgba(66, 133, 244, 0.32);
+      border-color: rgba(255, 255, 255, 0.20);
+      box-shadow: 0 3px 12px rgba(56, 189, 248, 0.35);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(135deg, #5a95f5 0%, #2563eb 100%);
-      box-shadow: 0 5px 16px rgba(66, 133, 244, 0.45);
+      background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+      box-shadow: 0 5px 16px rgba(56, 189, 248, 0.50);
     }
 
     .btn-tonal {
-      background: rgba(138, 180, 248, 0.14);
+      background: rgba(56, 189, 248, 0.12);
       color: var(--g-blue);
-      border-color: rgba(138, 180, 248, 0.28);
+      border-color: rgba(56, 189, 248, 0.28);
     }
 
     .btn-tonal.active {
       background: var(--g-blue);
-      color: #090d16;
+      color: #070a13;
       font-weight: 600;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.40);
+    }
+
+    .btn-theater {
+      background: rgba(56, 189, 248, 0.10);
+      color: var(--g-blue);
+      border-color: rgba(56, 189, 248, 0.28);
+    }
+
+    .btn-theater:hover {
+      background: rgba(56, 189, 248, 0.22);
+      border-color: var(--g-blue);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
     }
 
     .btn-sm {
-      padding: 4px 10px;
-      font-size: 11.5px;
+      padding: 3px 9px;
+      font-size: 11px;
+      height: 25px;
     }
 
     .main-container {
       max-width: 1640px;
       margin: 0 auto;
-      padding: 14px 20px 36px;
+      padding: 10px 18px 32px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
     }
 
-    /* Control Deck Card */
+    /* Compact Floating Control Dock (Saving 80px+ vertical headroom) */
     .control-deck {
-      background: var(--bg-surface-1);
-      border: 1px solid var(--border-subtle);
+      background: rgba(13, 19, 34, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(56, 189, 248, 0.18);
       border-radius: var(--radius-lg);
-      padding: 14px 16px;
-      box-shadow: var(--shadow-card);
+      padding: 8px 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.50), 0 0 1px rgba(255, 255, 255, 0.10);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 6px;
     }
 
     .control-row {
@@ -238,43 +254,43 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 8px;
     }
 
     .param-group {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .param-box {
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: var(--bg-surface-2);
-      padding: 5px 11px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
+      gap: 6px;
+      background: rgba(20, 29, 52, 0.82);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(148, 163, 184, 0.16);
     }
 
     .param-box.comp-box {
-      border-color: rgba(197, 138, 249, 0.30);
-      background: rgba(197, 138, 249, 0.06);
+      border-color: rgba(129, 140, 248, 0.32);
+      background: rgba(129, 140, 248, 0.08);
     }
 
     .param-label {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-secondary);
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
     .dot-indicator {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       display: inline-block;
     }
@@ -284,33 +300,35 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       color: var(--text-primary);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 4px 8px;
-      font-size: 12.5px;
+      padding: 2px 6px;
+      font-size: 11.5px;
+      height: 25px;
       font-family: inherit;
       font-weight: 500;
       cursor: pointer;
       outline: none;
-      transition: border-color var(--transition-fast);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
     }
 
     select.m3-select:focus, select.m3-select:hover {
       border-color: var(--g-blue);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.30);
     }
 
     /* Preset Pills Bar */
     .presets-bar {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       flex-wrap: wrap;
-      padding-top: 2px;
     }
 
     .preset-tag {
-      font-size: 11.5px;
-      padding: 3px 10px;
+      font-size: 10.5px;
+      padding: 2px 8px;
+      line-height: 18px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
       cursor: pointer;
@@ -318,9 +336,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     .preset-tag:hover, .preset-tag.active {
-      background: rgba(138, 180, 248, 0.15);
+      background: rgba(56, 189, 248, 0.14);
       color: var(--g-blue);
-      border-color: rgba(138, 180, 248, 0.4);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
     }
 
     /* Timeline & Stage Scrubber */
@@ -328,10 +347,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
-      gap: 14px;
-      background: var(--bg-surface-2);
-      padding: 8px 14px;
-      border-radius: var(--radius-md);
+      gap: 10px;
+      background: rgba(20, 29, 52, 0.82);
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
       border: 1px solid var(--border-subtle);
     }
 
@@ -344,14 +363,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .playback-controls {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       flex-wrap: wrap;
     }
 
     .slider-wrap {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 3px;
       width: 100%;
     }
 
@@ -359,7 +378,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       -webkit-appearance: none;
       appearance: none;
       width: 100%;
-      height: 6px;
+      height: 5px;
       border-radius: 999px;
       background: linear-gradient(90deg,
         #38bdf8 0%, #38bdf8 20%,
@@ -374,32 +393,32 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     input[type="range"].m3-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       background: #ffffff;
-      border: 3px solid var(--g-blue-strong);
-      box-shadow: 0 0 10px rgba(66, 133, 244, 0.8);
+      border: 2.5px solid var(--g-blue-strong);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.85);
       cursor: grab;
       transition: transform 120ms ease;
     }
 
     input[type="range"].m3-slider::-webkit-slider-thumb:hover {
-      transform: scale(1.18);
+      transform: scale(1.22);
     }
 
     .stage-jumps {
       display: flex;
       justify-content: space-between;
-      gap: 4px;
+      gap: 3px;
       flex-wrap: wrap;
     }
 
     .stage-pill {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 6px;
-      background: rgba(15, 23, 42, 0.65);
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 5px;
+      background: rgba(13, 19, 34, 0.70);
       border: 1px solid transparent;
       color: var(--text-secondary);
       cursor: pointer;
@@ -412,17 +431,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     .stage-pill.active {
-      background: rgba(138, 180, 248, 0.18);
+      background: rgba(56, 189, 248, 0.18);
       color: var(--g-blue);
-      border-color: rgba(138, 180, 248, 0.45);
+      border-color: rgba(56, 189, 248, 0.50);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.30);
       font-weight: 600;
     }
 
-    /* Telemetry Strip (8 Cards with Dual-Star Comparison Diffs) */
+    /* Telemetry Strip (8 Cards with Zero-Jitter Comparison Slots) */
     .telemetry-grid {
       display: grid;
       grid-template-columns: repeat(8, minmax(0, 1fr));
-      gap: 10px;
+      gap: 8px;
     }
 
     @media (max-width: 1400px) {
@@ -441,7 +461,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       background: var(--bg-surface-1);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 10px 12px;
+      padding: 8px 10px;
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
@@ -449,6 +469,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       gap: 3px;
       position: relative;
       overflow: hidden;
+      min-height: 84px;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .metric-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.35);
     }
 
     .metric-card::before {
@@ -459,60 +486,93 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       width: 100%;
       height: 2px;
       background: linear-gradient(90deg, var(--g-blue), transparent);
-      opacity: 0.65;
+      opacity: 0.85;
     }
+
+    .card-stage::before { background: linear-gradient(90deg, #38bdf8, transparent); }
+    .card-age::before { background: linear-gradient(90deg, #10b981, transparent); }
+    .card-mass::before { background: linear-gradient(90deg, #f59e0b, transparent); }
+    .card-teff::before { background: linear-gradient(90deg, #38bdf8, transparent); }
+    .card-lum::before { background: linear-gradient(90deg, #818cf8, transparent); }
+    .card-tc::before { background: linear-gradient(90deg, #f59e0b, transparent); }
+    .card-rhoc::before { background: linear-gradient(90deg, #c084fc, transparent); }
+    .card-remnant::before { background: linear-gradient(90deg, #ef4444, transparent); }
+
+    .unit-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      padding: 1px 5px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .badge-cyan { background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.25); }
+    .badge-green { background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .badge-amber { background: rgba(245, 158, 11, 0.12); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.25); }
+    .badge-indigo { background: rgba(129, 140, 248, 0.12); color: #818cf8; border: 1px solid rgba(129, 140, 248, 0.25); }
+    .badge-purple { background: rgba(192, 132, 252, 0.12); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.25); }
+    .badge-coral { background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.25); }
 
     .metric-title {
       font-size: 11px;
-      color: var(--text-secondary);
-      font-weight: 500;
+      color: #cbd5e1;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .metric-val {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--text-primary);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      letter-spacing: -0.01em;
     }
 
     .metric-sub {
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
+    /* Fixed reserved comparison slot prevents any layout jitter when toggled */
     .metric-comp {
-      font-size: 11px;
-      color: var(--g-violet);
-      background: rgba(197, 138, 249, 0.10);
+      font-size: 10.5px;
+      color: #c084fc;
+      background: rgba(129, 140, 248, 0.10);
+      border: 1px solid rgba(129, 140, 248, 0.22);
       border-radius: 4px;
       padding: 1px 5px;
       margin-top: 2px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      display: none;
+      min-height: 20px;
+      line-height: 18px;
+      box-sizing: border-box;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-fast), visibility var(--transition-fast);
     }
 
     body.comp-active .metric-comp {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
 
-    /* 2x2 Visualization Grid */
+    /* Responsive 2x2 Visualization Grid (Maintained down to 900px!) */
     .viz-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 12px;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 900px) {
       .viz-grid {
         grid-template-columns: 1fr;
       }
@@ -526,7 +586,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      min-height: 430px;
+      min-height: 420px;
+      transition: box-shadow var(--transition-fast);
     }
 
     .panel-header {
@@ -584,6 +645,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       cursor: crosshair;
     }
 
+    #onionCanvas, #onion2DCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
     #onionCanvas {
       cursor: grab;
     }
@@ -592,27 +659,206 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       cursor: grabbing;
     }
 
+    #onion2DCanvas {
+      cursor: crosshair;
+      background: radial-gradient(circle at 50% 50%, #0e1628 0%, #070b14 100%);
+    }
+
     /* Overlay HUD inside 3D Panel */
     .hud-overlay {
       position: absolute;
       left: 12px;
       bottom: 12px;
-      background: rgba(9, 13, 22, 0.82);
-      backdrop-filter: blur(8px);
+      background: rgba(9, 13, 22, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 8px 10px;
+      padding: 8px 12px;
       pointer-events: none;
-      max-width: 310px;
+      max-width: 360px;
       font-size: 11.5px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+      z-index: 10;
+    }
+
+    /* Floating Raycaster & 2D Layer Diagnostic Inspector Card */
+    .onion-inspector-card {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      width: 320px;
+      background: rgba(13, 19, 34, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.12);
+      font-size: 11.5px;
+      z-index: 20;
+      transition: opacity 160ms ease, transform 160ms ease;
+      pointer-events: auto;
+    }
+
+    .onion-inspector-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .onion-inspector-title {
+      font-weight: 700;
+      font-size: 12.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .onion-pin-badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.18);
+      color: var(--g-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      cursor: pointer;
+    }
+
+    .onion-pin-badge.active {
+      background: rgba(239, 68, 68, 0.25);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.45);
+    }
+
+    .onion-zone-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .zone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 500;
+    }
+
+    .zone-pill.convective {
+      background: rgba(249, 115, 22, 0.18);
+      color: #fb923c;
+      border: 1px solid rgba(249, 115, 22, 0.35);
+    }
+
+    .zone-pill.radiative {
+      background: rgba(56, 189, 248, 0.14);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .zone-pill.burning {
+      background: rgba(234, 179, 8, 0.18);
+      color: #facc15;
+      border: 1px solid rgba(234, 179, 8, 0.35);
+    }
+
+    .zone-pill.inert {
+      background: rgba(148, 163, 184, 0.12);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .reaction-formula-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px dashed rgba(234, 179, 8, 0.3);
+      border-radius: 4px;
+      padding: 4px 6px;
+      margin-bottom: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: #fef08a;
+    }
+
+    .onion-metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .onion-metric-item {
+      background: rgba(20, 29, 52, 0.65);
+      border-radius: 4px;
+      padding: 4px 6px;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .onion-metric-label {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-bottom: 1px;
+    }
+
+    .onion-metric-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .abundance-mini-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .abund-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .abund-row .sp-lbl {
+      width: 32px;
+      color: var(--text-secondary);
+    }
+
+    .abund-bar-bg {
+      flex: 1;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .abund-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .abund-val {
+      width: 38px;
+      text-align: right;
+      color: var(--text-primary);
     }
 
     .shell-legend {
       position: absolute;
       right: 12px;
       top: 12px;
-      background: rgba(9, 13, 22, 0.80);
-      backdrop-filter: blur(8px);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
       padding: 7px 10px;
@@ -621,6 +867,25 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       gap: 4px;
       font-size: 11px;
       pointer-events: none;
+      z-index: 10;
+      max-width: 230px;
+    }
+
+    .btn-group {
+      display: inline-flex;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .btn-group .btn {
+      border-radius: 0;
+      border: none;
+      border-right: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .btn-group .btn:last-child {
+      border-right: none;
     }
 
     .legend-item {
@@ -825,21 +1090,22 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       }
     }
 
-    /* Floating Tooltip */
+    /* Floating Tooltip (Elevated above theater mode) */
     #stellarTooltip {
       position: fixed;
-      z-index: 100;
+      z-index: 10050;
       pointer-events: none;
-      background: rgba(9, 13, 22, 0.94);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(138, 180, 248, 0.4);
+      background: rgba(13, 19, 34, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.40);
       border-radius: var(--radius-sm);
       padding: 8px 11px;
       font-size: 11.5px;
       color: var(--text-primary);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 12px rgba(56, 189, 248, 0.20);
       display: none;
-      max-width: 290px;
+      max-width: 300px;
     }
 
     /* Toast Notification */
@@ -847,14 +1113,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       position: fixed;
       bottom: 22px;
       right: 22px;
-      z-index: 120;
-      background: #1e293b;
+      z-index: 10100;
+      background: #141d34;
       border: 1px solid var(--g-blue);
       color: #ffffff;
-      padding: 10px 16px;
+      padding: 9px 16px;
       border-radius: 999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      font-size: 12.5px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.50), 0 0 15px rgba(56, 189, 248, 0.30);
+      font-size: 12px;
       font-weight: 500;
       opacity: 0;
       transform: translateY(12px);
@@ -865,6 +1131,64 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     #toastBanner.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Theater / Fullscreen Mode Styles */
+    .theater-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(7, 10, 19, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 9990;
+      cursor: pointer;
+    }
+
+    body.theater-active .theater-backdrop {
+      display: block;
+    }
+
+    body.theater-active {
+      overflow: hidden;
+    }
+
+    .viz-panel.theater-mode {
+      position: fixed !important;
+      top: 14px !important;
+      left: 14px !important;
+      right: 14px !important;
+      bottom: 14px !important;
+      width: calc(100vw - 28px) !important;
+      height: calc(100vh - 28px) !important;
+      max-width: none !important;
+      z-index: 9999 !important;
+      box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(56, 189, 248, 0.42), 0 0 45px rgba(56, 189, 248, 0.18) !important;
+      background: var(--bg-surface-1) !important;
+      border-radius: var(--radius-lg) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      animation: theaterPop 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes theaterPop {
+      0% { transform: scale(0.97); opacity: 0.8; }
+      100% { transform: scale(1.0); opacity: 1.0; }
+    }
+
+    .viz-panel.theater-mode .panel-header {
+      background: rgba(13, 19, 34, 0.96) !important;
+      padding: 10px 18px !important;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.22) !important;
+    }
+
+    .viz-panel.theater-mode .canvas-box {
+      flex: 1 1 auto !important;
+      height: calc(100% - 52px) !important;
+      min-height: 0 !important;
     }
   </style>
 </head>
@@ -1001,50 +1325,50 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <!-- Synchronized Dual-Star Telemetry Strip -->
     <section class="telemetry-grid" id="metricsContainer">
-      <div class="metric-card">
-        <div class="metric-title"><span>当前演化阶段</span><span>STAGE</span></div>
+      <div class="metric-card card-stage">
+        <div class="metric-title"><span>当前演化阶段</span><span class="unit-badge badge-cyan">STAGE</span></div>
         <div class="metric-val" id="mStageName">ZAMS 零龄主序</div>
         <div class="metric-sub" id="mRegimeSub">低质量类太阳恒星</div>
         <div class="metric-comp" id="cStageInfo">对比: 15.0 M☉ (Z=0.014)</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>恒星年龄 / 主序寿命</span><span>AGE</span></div>
+      <div class="metric-card card-age">
+        <div class="metric-title"><span>恒星年龄 / 寿命</span><span class="unit-badge badge-green">AGE</span></div>
         <div class="metric-val mono" id="mAgeVal">0.00 yr</div>
         <div class="metric-sub mono" id="mLifetimeSub">t_MS = 10.06 Gyr</div>
         <div class="metric-comp mono" id="cAgeDiff">对比 t_MS: 11.89 Myr (快 846×)</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>当前质量 / 星风剥离</span><span>MASS</span></div>
+      <div class="metric-card card-mass">
+        <div class="metric-title"><span>当前质量 / 星风</span><span class="unit-badge badge-amber">MASS</span></div>
         <div class="metric-val mono" id="mMassVal">1.000 M☉</div>
         <div class="metric-sub mono" id="mMassLossSub">ΔM = 0.000 M☉</div>
         <div class="metric-comp mono" id="cMassDiff">对比 M₂: 15.00 M☉</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>表面有效温度</span><span>T_eff</span></div>
+      <div class="metric-card card-teff">
+        <div class="metric-title"><span>表面有效温度</span><span class="unit-badge badge-cyan">T_eff</span></div>
         <div class="metric-val mono" id="mTeffVal">5,600 K</div>
         <div class="metric-sub mono" id="mLogTeffSub">log T_eff = 3.748</div>
         <div class="metric-comp mono" id="cTeffDiff">对比: 30,170 K (ΔlogT = +0.73)</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>表面光度与半径</span><span>L &amp; R</span></div>
+      <div class="metric-card card-lum">
+        <div class="metric-title"><span>表面光度与半径</span><span class="unit-badge badge-indigo">L &amp; R</span></div>
         <div class="metric-val mono" id="mLumVal">log L = -0.155 L☉</div>
         <div class="metric-sub mono" id="mRadSub">R = 0.89 R☉ (0.70 L☉)</div>
         <div class="metric-comp mono" id="cLumDiff">对比: log L = +4.235 (Δ = +4.39)</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>中心温度与聚变燃烧</span><span>T_c</span></div>
+      <div class="metric-card card-tc">
+        <div class="metric-title"><span>中心温度与聚变</span><span class="unit-badge badge-amber">T_c</span></div>
         <div class="metric-val mono" id="mTcVal">log T_c = 7.130 K</div>
         <div class="metric-sub" id="mBurningSub">核心 pp 链氢燃烧</div>
         <div class="metric-comp mono" id="cTcDiff">对比: log T_c = 7.515 (Δ = +0.39)</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>中心密度与电子简并度</span><span>ρ_c &amp; η</span></div>
+      <div class="metric-card card-rhoc">
+        <div class="metric-title"><span>中心密度与简并度</span><span class="unit-badge badge-purple">ρ_c &amp; η</span></div>
         <div class="metric-val mono" id="mRhocVal">log ρ_c = 1.920</div>
         <div class="metric-sub mono" id="mEtaSub">η = -1.60 (理想气体态)</div>
         <div class="metric-comp mono" id="cRhocDiff">对比: log ρ_c = 0.653, η = -3.60</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-title"><span>终态残骸与核心命运</span><span>REMNANT</span></div>
+      <div class="metric-card card-remnant">
+        <div class="metric-title"><span>终态残骸与命运</span><span class="unit-badge badge-coral">REMNANT</span></div>
         <div class="metric-val" id="mRemnantVal">CO WD (0.54 M☉)</div>
         <div class="metric-sub" id="mSnSub">行星状星云抛射</div>
         <div class="metric-comp" id="cRemnantDiff">对比: NS 中子星 (1.46 M☉)</div>
@@ -1063,6 +1387,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           <div class="panel-tools">
             <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleBgGrid">🌌 全质量背景轨线簇</button>
             <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleIsoRadius">📏 等半径斜线</button>
+            <button type="button" class="btn btn-sm btn-theater" title="剧场全屏模式 (Esc 退出)">⛶ 剧场模式</button>
           </div>
         </div>
         <div class="canvas-box">
@@ -1079,6 +1404,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           </div>
           <div class="panel-tools">
             <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleEosZones">⚖️ 状态方程(EOS)分区</button>
+            <button type="button" class="btn btn-sm btn-theater" title="剧场全屏模式 (Esc 退出)">⛶ 剧场模式</button>
           </div>
         </div>
         <div class="canvas-box">
@@ -1090,31 +1416,85 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       <article class="viz-panel">
         <div class="panel-header">
           <div class="panel-title-group">
-            <div class="panel-title">3. 恒星内部 3D 剖切同心壳层与终态天体引擎 (WebGL Three.js)</div>
-            <div class="panel-subtitle">实时映射径向丰度边界 q_i · 含黑体色温光球、星风粒子流、行星状星云、脉冲星射束与黑洞光子环</div>
+            <div class="panel-title" id="panel3Title">3. 恒星内部剖切同心壳层洋葱图与终态天体 (3D WebGL / 2D 出版级)</div>
+            <div class="panel-subtitle" id="panel3Subtitle">完整 7 重同心核合成壳层 (H→He→C→Ne→O→Si→Fe) · 对流循环翻腾与辐射平衡 · 活跃核反应环脉动发光 · 质量/物理半径/对数坐标映射</div>
           </div>
           <div class="panel-tools">
-            <button type="button" class="btn btn-sm" id="btnCamIso">📐 等轴</button>
-            <button type="button" class="btn btn-sm" id="btnCamFront">👁 正视</button>
-            <button type="button" class="btn btn-sm" id="btnCamTop">🔬 俯视</button>
-            <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleCutaway">✂ 270°剖切</button>
-            <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleWind">✨ 星风/特效</button>
+            <div class="btn-group" id="viewModeToggleGroup">
+              <button type="button" class="btn btn-sm btn-tonal active" id="btnView3D" title="切换至 3D 交互式剖切球体">🌐 3D 剖切</button>
+              <button type="button" class="btn btn-sm btn-tonal" id="btnView2D" title="切换至 2D 出版级截面图">📑 2D 截面</button>
+            </div>
+            <div class="btn-group" id="coordToggleGroup">
+              <button type="button" class="btn btn-sm btn-tonal active" id="btnCoordMass" data-coord="q" title="归一化内部质量坐标 q = m/M*">质量 q</button>
+              <button type="button" class="btn btn-sm btn-tonal" id="btnCoordRadius" data-coord="r_norm" title="真实物理半径比例 r/R*">半径 r/R*</button>
+              <button type="button" class="btn btn-sm btn-tonal" id="btnCoordLogR" data-coord="log_r" title="对数平衡比例 log r">对数 log r</button>
+            </div>
+            <span id="tools3DGroup" style="display:inline-flex;gap:4px">
+              <button type="button" class="btn btn-sm" id="btnCamIso">📐 等轴</button>
+              <button type="button" class="btn btn-sm" id="btnCamFront">👁 正视</button>
+              <button type="button" class="btn btn-sm" id="btnCamTop">🔬 俯视</button>
+              <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleCutaway">✂ 270°剖切</button>
+              <button type="button" class="btn btn-sm btn-tonal active" id="btnToggleWind">✨ 星风/特效</button>
+            </span>
+            <button type="button" class="btn btn-sm btn-theater" title="剧场全屏模式 (Esc 退出)">⛶ 剧场模式</button>
           </div>
         </div>
         <div class="canvas-box" id="onionContainer">
           <canvas id="onionCanvas"></canvas>
+          <canvas id="onion2DCanvas" style="display:none"></canvas>
           <div class="shell-legend" id="shellLegendBox">
             <div style="font-weight:600;color:#fff;margin-bottom:2px">核合成壳层图例</div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#f97316"></span><span>¹H 氢包层 (Envelope)</span></div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#facc15"></span><span>⁴He 氦壳层/核 (Helium)</span></div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#22c55e"></span><span>¹²C / ¹⁶O 碳氧层</span></div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#38bdf8"></span><span>¹⁶O / ²⁰Ne 氧氖层</span></div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#a855f7"></span><span>²⁸Si 硅硫壳层</span></div>
-            <div class="legend-item"><span class="legend-swatch" style="background:#e2e8f0"></span><span>⁵⁶Fe 简并铁核</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#f97316"></span><span>¹H 氢包层 (H1 Envelope)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#facc15"></span><span>⁴He 氦壳层/核 (He4 Shell/Core)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#22c55e"></span><span>¹²C 碳燃烧层/核心 (C12 Shell/Core)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#06b6d4"></span><span>²⁰Ne 氖燃烧层 (Ne20 Shell)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#38bdf8"></span><span>¹⁶O 氧燃烧层 (O16 Shell)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#a855f7"></span><span>²⁸Si 硅硫壳层 (Si28 Shell)</span></div>
+            <div class="legend-item"><span class="legend-swatch" style="background:#e2e8f0"></span><span>⁵⁶Fe 简并铁峰核 (Fe56 Core)</span></div>
           </div>
           <div class="hud-overlay" id="onionHudInfo">
-            <div style="font-weight:600;color:var(--g-blue)" id="hudTitle">1.0 M☉ · ZAMS 零龄主序</div>
-            <div style="color:var(--text-secondary);margin-top:2px" id="hudDesc">鼠标拖拽旋转 · 滚轮缩放 · 悬停查看壳层组分</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-weight:600;color:var(--g-blue)" id="hudTitle">1.0 M☉ · ZAMS 零龄主序</span>
+              <span class="unit-badge" id="hudCoordBadge" style="background:rgba(56,189,248,0.15);color:#38bdf8;font-size:10px">q 质量坐标</span>
+            </div>
+            <div style="color:var(--text-secondary);margin-top:2px" id="hudDesc">核心 pp 链氢聚变 | 终态: 碳氧白矮星</div>
+            <div style="color:#94a3b8;font-size:10.5px;margin-top:3px" id="hudTip">🖱 悬停或点击壳层/核反应界面，获取微观物理诊断与核反应流</div>
+          </div>
+          <div class="onion-inspector-card" id="onionInspectorCard" style="display:none">
+            <div class="onion-inspector-header">
+              <div class="onion-inspector-title" id="inspTitle">
+                <span class="legend-swatch" id="inspColorSwatch" style="background:#f97316"></span>
+                <span id="inspName">¹H 氢包层 (Envelope)</span>
+              </div>
+              <button type="button" class="onion-pin-badge" id="inspPinBtn">📌 锁定</button>
+            </div>
+            <div class="onion-zone-status">
+              <span class="zone-pill convective" id="inspTransportPill">🌀 对流混合区</span>
+              <span class="zone-pill burning" id="inspBurningPill">🔥 活跃核燃烧</span>
+            </div>
+            <div class="reaction-formula-box" id="inspReactionBox">
+              4¹H → ⁴He + 2e⁺ + 2ν_e + 26.73 MeV
+            </div>
+            <div class="onion-metric-grid">
+              <div class="onion-metric-item">
+                <div class="onion-metric-label">特征温度 T</div>
+                <div class="onion-metric-val" id="inspTemp">1.54 × 10⁷ K</div>
+              </div>
+              <div class="onion-metric-item">
+                <div class="onion-metric-label">特征密度 ρ</div>
+                <div class="onion-metric-val" id="inspRho">1.28 × 10² g/cm³</div>
+              </div>
+              <div class="onion-metric-item">
+                <div class="onion-metric-label">压强 P (dyn/cm²)</div>
+                <div class="onion-metric-val" id="inspPressure">2.65 × 10¹⁷</div>
+              </div>
+              <div class="onion-metric-item">
+                <div class="onion-metric-label" id="inspCoordLabel">质量与半径范围</div>
+                <div class="onion-metric-val" id="inspCoord">q: 0.00 - 0.22</div>
+              </div>
+            </div>
+            <div style="font-size:10.5px;font-weight:600;color:var(--text-secondary);margin-bottom:3px">局部化学丰度 X_i:</div>
+            <div class="abundance-mini-bars" id="inspAbundBars"></div>
           </div>
         </div>
       </article>
@@ -1129,6 +1509,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           <div class="panel-tools">
             <button type="button" class="btn btn-sm btn-tonal active" id="btnModeAbundance">🧪 径向丰度剖面 X_i(q)</button>
             <button type="button" class="btn btn-sm btn-tonal" id="btnModeKippenhahn">📊 Kippenhahn 对流与燃烧图</button>
+            <button type="button" class="btn btn-sm btn-theater" title="剧场全屏模式 (Esc 退出)">⛶ 剧场模式</button>
           </div>
         </div>
         <div class="canvas-box">
@@ -1250,6 +1631,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
   <div id="stellarTooltip"></div>
   <div id="toastBanner">已复制到剪贴板</div>
+  <div id="theaterBackdrop" class="theater-backdrop"></div>
 
   <script>
     // Embedded Physics-Audited Grid Dataset (28 Models: 7 Masses x 4 Metallicities)
@@ -1693,7 +2075,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       panel4Mode: "abundance", // "abundance" or "kippenhahn"
       matrixMetric: "remnant",
       customTrack: null,
-      activePreset: "sun_vs_15"
+      activePreset: "sun_vs_15",
+      onionCoord: "q", // "q", "r_norm", "log_r"
+      onionView: "3d", // "3d", "2d"
+      pinnedShell: null
     };
 
     // Helper: Get model object safely
@@ -1885,12 +2270,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     // =========================================================================
     function prepareCanvas(canvas) {
       const rect = canvas.parentElement.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.max(1, window.devicePixelRatio || 1);
       const w = Math.max(300, Math.floor(rect.width));
       const h = Math.max(260, Math.floor(rect.height));
-      if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
-        canvas.width = w * dpr;
-        canvas.height = h * dpr;
+      const pw = Math.round(w * dpr);
+      const ph = Math.round(h * dpr);
+      if (canvas.width !== pw || canvas.height !== ph) {
+        canvas.width = pw;
+        canvas.height = ph;
       }
       const ctx = canvas.getContext("2d");
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -2592,8 +2979,258 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     }
 
     // =========================================================================
-    // Panel 3: Three.js 3D Cutaway Onion-Skin & Remnant Special Effects Engine
+    // Panel 3: Overhauled Onion-Skin Diagram Engine (3D WebGL Three.js & 2D Publication)
+    // Features F14-F19: 7 Concentric Burning Shells, Convection/Radiation Mixing,
+    // Volumetric Pulsating Burning Rings, Tri-Coordinate Mapping, Raycaster Inspection,
+    // and 2D/3D Dual-View Presentation.
     // =========================================================================
+
+    // Coordinate Mapping Function
+    function coordTransform(q, coordMode, mass, sVal) {
+      const qClamped = Math.max(0, Math.min(1.0, q));
+      if (coordMode === "q") {
+        return qClamped;
+      }
+      if (coordMode === "r_norm") {
+        // True physical radius r/R*: account for extreme core contraction & envelope expansion
+        const gamma = (sVal <= 1.05) ? 0.45 : ((sVal <= 2.2) ? 0.68 : 0.88);
+        return Math.pow(qClamped, gamma);
+      }
+      // Balanced logarithmic radius: smooth mapping highlighting both nuclear core and outer envelope
+      return Math.log10(1.0 + 45.0 * qClamped) / Math.log10(46.0);
+    }
+
+    // Number formatting helper for scientific notation with superscripts
+    function formatScientific(v) {
+      if (!isFinite(v) || v === 0) return "0.00";
+      const exp = Math.floor(Math.log10(Math.abs(v)));
+      const mant = v / Math.pow(10, exp);
+      const supMap = {
+        "-": "⁻", "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴",
+        "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹"
+      };
+      const supStr = String(exp).split("").map((c) => supMap[c] || c).join("");
+      return `${mant.toFixed(2)} × 10${supStr}`;
+    }
+
+    function hexToRgba(hexStr, alpha) {
+      const hex = hexStr.replace("#", "");
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    // Comprehensive Shell Segmentation and Local Astrophysical Conditions
+    function getDetailedOnionShells(model, stepIdx, coordMode) {
+      const sVal = model.track.s[stepIdx];
+      const mass = model.mass_init;
+      const teff = Math.pow(10, model.track.log_Teff[stepIdx]);
+      const tc = Math.pow(10, model.track.log_Tc[stepIdx]);
+      const rhoc = Math.pow(10, model.track.log_Rhoc[stepIdx]);
+      const prof = getInterpolatedProfile(model, sVal);
+      const kip = model.kippenhahn;
+
+      const convCore = kip.conv_core[stepIdx] || 0.0;
+      const convEnv = kip.conv_env[stepIdx] || 1.0;
+      const hShellQ = kip.h_shell[stepIdx];
+      const heShellQ = kip.he_shell[stepIdx];
+
+      const qArr = prof.q;
+      const rawShells = [];
+      let prevDom = null;
+      let startQ = 0.0;
+
+      const speciesOrder = ["Fe56", "Si28", "O16", "Ne20", "C12", "He4", "H1"];
+      const colMap = {
+        Fe56: "#e2e8f0",
+        Si28: "#a855f7",
+        Ne20: "#06b6d4",
+        O16: "#38bdf8",
+        C12: "#22c55e",
+        He4: "#facc15",
+        H1: "#f97316"
+      };
+      const colIntMap = {
+        Fe56: 0xe2e8f0,
+        Si28: 0xa855f7,
+        Ne20: 0x06b6d4,
+        O16: 0x38bdf8,
+        C12: 0x22c55e,
+        He4: 0xfacc15,
+        H1: teffToHexInt(teff)
+      };
+
+      for (let i = 0; i < qArr.length; i++) {
+        let bestSp = "H1";
+        let bestVal = -1;
+        for (const sp of speciesOrder) {
+          if (prof[sp] && prof[sp][i] > bestVal) {
+            bestVal = prof[sp][i];
+            bestSp = sp;
+          }
+        }
+        if (bestSp !== prevDom && prevDom !== null) {
+          rawShells.push({ sp: prevDom, q0: startQ, q1: qArr[i] });
+          startQ = qArr[i];
+        }
+        prevDom = bestSp;
+      }
+      if (prevDom !== null) {
+        rawShells.push({ sp: prevDom, q0: startQ, q1: 1.0 });
+      }
+
+      const shells = [];
+      const nSegs = rawShells.length;
+
+      rawShells.forEach((seg, idxSeg) => {
+        const q0 = seg.q0;
+        const q1 = seg.q1;
+        const sp = seg.sp;
+        const qMid = 0.5 * (q0 + q1);
+        const midIdx = Math.min(qArr.length - 1, Math.max(0, Math.round(qMid * (qArr.length - 1))));
+
+        // Chemical abundance profile at midpoint
+        const abundances = {};
+        speciesOrder.forEach((s) => {
+          abundances[s] = prof[s] ? prof[s][midIdx] : 0.0;
+        });
+
+        // Characteristic local T, rho, P
+        const tFactor = Math.max(0.015, 1.0 - Math.pow(qMid, 0.48));
+        const rhoFactor = Math.max(1e-7, Math.pow(Math.max(0.001, 1.0 - Math.pow(qMid, 0.35)), 3.0));
+        const tMid = Math.max(teff, tc * tFactor);
+        const rhoMid = Math.max(1e-8, rhoc * rhoFactor);
+
+        // Pressure P = P_gas + P_rad + P_deg
+        const mu = 1.0 / (2.0 * (abundances.H1 || 0.0) + 0.75 * (abundances.He4 || 0.0) + 0.5 * (1.0 - (abundances.H1 || 0.0) - (abundances.He4 || 0.0)));
+        const pGas = (rhoMid / (mu * 1.6605e-24)) * (1.3806e-16 * tMid);
+        const pRad = (1.0 / 3.0) * 7.5657e-15 * Math.pow(tMid, 4.0);
+        const muE = 2.0 / (1.0 + (abundances.H1 || 0.0));
+        const pDeg = 1.0036e13 * Math.pow(rhoMid / muE, 5.0 / 3.0);
+        const pMid = pGas + pRad + pDeg;
+
+        // Convection state
+        let isConv = false;
+        if (mass <= 0.4) {
+          isConv = true; // Fully convective M dwarf
+        } else {
+          if (qMid <= convCore + 0.015) isConv = true;
+          else if (qMid >= convEnv - 0.015) isConv = true;
+          else if (sVal >= 3.8 && mass >= 1.5 && q0 >= 0.15 && q1 <= 0.55 && (sp === "He4" || sp === "C12")) {
+            isConv = true; // TP-AGB intershell pulse convection
+          }
+        }
+
+        // Active nuclear burning and reaction equation
+        let burningActive = false;
+        let reaction = "核反应微弱或已熄灭 (辐射平衡 / 电子简并态)";
+        let burningColorHex = "#f59e0b";
+        let burningColorHexInt = 0xf59e0b;
+
+        if (sp === "H1") {
+          const isHShell = (hShellQ !== null && q0 <= hShellQ && q1 >= hShellQ);
+          const isHCore = (sVal <= 1.05);
+          if (isHShell || isHCore) {
+            burningActive = true;
+            if (mass < 1.3) {
+              reaction = "4p → ⁴He + 2e⁺ + 2ν_e + 26.73 MeV (pp-I 链)";
+            } else {
+              reaction = "¹²C(p,γ)¹³N(β⁺)¹³C(p,γ)¹⁴N(p,γ)¹⁵O(β⁺)¹⁵N(p,α)¹²C (CNO-I 循环)";
+            }
+            burningColorHex = "#f59e0b";
+            burningColorHexInt = 0xf59e0b;
+          }
+        } else if (sp === "He4") {
+          const isHeShell = (heShellQ !== null && q0 <= heShellQ && q1 >= heShellQ);
+          const isHeCore = (sVal >= 2.05 && sVal <= 3.55 && q0 <= 0.35);
+          if (isHeShell || isHeCore) {
+            burningActive = true;
+            reaction = "3 ⁴He → ¹²C + γ (7.27 MeV) 与 ¹²C(α,γ)¹⁶O (7.16 MeV) (3α 过程)";
+            burningColorHex = "#e879f9";
+            burningColorHexInt = 0xe879f9;
+          }
+        } else if (sp === "C12") {
+          if (mass >= 7.0 && sVal >= 3.6 && sVal <= 4.7 && qMid <= 0.45) {
+            burningActive = true;
+            reaction = "¹²C + ¹²C → ²⁰Ne + α (4.62 MeV) / ²³Na + p (2.24 MeV)";
+            burningColorHex = "#22c55e";
+            burningColorHexInt = 0x22c55e;
+          }
+        } else if (sp === "Ne20") {
+          if (mass >= 10.0 && sVal >= 4.2 && qMid <= 0.35) {
+            burningActive = true;
+            reaction = "²⁰Ne(γ,α)¹⁶O 与 ²⁰Ne(α,γ)²⁴Mg (光致蜕变反应网络, T ≥ 1.2×10⁹ K)";
+            burningColorHex = "#06b6d4";
+            burningColorHexInt = 0x06b6d4;
+          }
+        } else if (sp === "O16") {
+          if (mass >= 10.0 && sVal >= 4.4 && qMid <= 0.30) {
+            burningActive = true;
+            reaction = "¹⁶O + ¹⁶O → ²⁸Si + α (9.59 MeV) / ³¹P + p (7.68 MeV) (T ≥ 1.8×10⁹ K)";
+            burningColorHex = "#38bdf8";
+            burningColorHexInt = 0x38bdf8;
+          }
+        } else if (sp === "Si28") {
+          if (mass >= 10.0 && sVal >= 4.5 && qMid <= 0.22) {
+            burningActive = true;
+            reaction = "²⁸Si + 7α ⇌ ⁵⁶Ni → ⁵⁶Co → ⁵⁶Fe (准核统计平衡 QSE 燃烧, T ≥ 3.0×10⁹ K)";
+            burningColorHex = "#a855f7";
+            burningColorHexInt = 0xa855f7;
+          }
+        } else if (sp === "Fe56") {
+          burningActive = false;
+          reaction = "结合能极值峰 (B/A = 8.79 MeV), 热核聚变终止; 简并电子气体抗衡引力收缩";
+          burningColorHex = "#e2e8f0";
+          burningColorHexInt = 0xe2e8f0;
+        }
+
+        // Localized descriptive name
+        let localizedName = "";
+        const isOuter = (idxSeg === nSegs - 1);
+        if (sp === "Fe56") localizedName = "⁵⁶Fe 简并铁峰核 (Fe56 Core)";
+        else if (sp === "Si28") localizedName = "²⁸Si 硅硫燃烧层 (Si28 Shell)";
+        else if (sp === "Ne20") localizedName = "²⁰Ne 氖燃烧层 (Ne20 Shell)";
+        else if (sp === "O16") localizedName = "¹⁶O 氧燃烧层 (O16 Shell)";
+        else if (sp === "C12") localizedName = (sVal > 4.65 && mass < 8.0) ? "¹²C / ¹⁶O 碳氧白矮核 (C12/O16 Core)" : "¹²C 碳燃烧层/核心 (C12 Shell/Core)";
+        else if (sp === "He4") localizedName = (sVal <= 1.05) ? "⁴He 氦聚变灰烬层 (He4 Ash)" : "⁴He 氦壳层/核 (He4 Shell/Core)";
+        else if (sp === "H1") localizedName = isOuter ? "¹H 富氢星体包层 (H1 Envelope)" : "¹H 氢燃烧壳层 (H1 Shell)";
+
+        // Coordinates
+        const u0 = coordTransform(q0, coordMode, mass, sVal);
+        const u1 = coordTransform(q1, coordMode, mass, sVal);
+        const r0_norm = coordTransform(q0, "r_norm", mass, sVal);
+        const r1_norm = coordTransform(q1, "r_norm", mass, sVal);
+
+        shells.push({
+          name: `${sp}_${q0.toFixed(2)}_${q1.toFixed(2)}`,
+          localizedName,
+          sp,
+          q0,
+          q1,
+          u0,
+          u1,
+          r0_norm,
+          r1_norm,
+          qMid,
+          tMid,
+          rhoMid,
+          pMid,
+          abundances,
+          is_convective: isConv,
+          burning_active: burningActive,
+          burning_reaction: reaction,
+          burningColorHex,
+          burningColorHexInt,
+          colHex: isOuter ? teffToColor(teff) : (colMap[sp] || "#38bdf8"),
+          colHexInt: isOuter ? teffToHexInt(teff) : (colIntMap[sp] || 0x38bdf8),
+          isOuter
+        });
+      });
+
+      return shells;
+    }
+
     const threeEngine = {
       scene: null,
       camera: null,
@@ -2601,35 +3238,42 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       starGroup: null,
       windParticles: null,
       specialGroup: null,
+      burningRings: [],
+      convectiveMarkers: [],
+      raycaster: new THREE.Raycaster(),
+      mouse: new THREE.Vector2(),
+      hoveredMesh: null,
+      origEmissiveIntensity: null,
       theta: 0.65,
       phi: 1.15,
       radius: 4.5,
       isDragging: false,
       lastX: 0,
       lastY: 0,
-      clock: 0,
+      clock: 0
     };
 
     function initThreeEngine() {
       const container = document.getElementById("onionContainer");
       const canvas = document.getElementById("onionCanvas");
+      const canvas2D = document.getElementById("onion2DCanvas");
       const rect = container.getBoundingClientRect();
 
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x080c17);
+      scene.background = new THREE.Color(0x070b14);
 
       const camera = new THREE.PerspectiveCamera(42, rect.width / rect.height, 0.1, 100);
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setPixelRatio(Math.max(1, window.devicePixelRatio || 1));
       renderer.setSize(rect.width, rect.height, false);
 
       // Lighting
-      const amb = new THREE.AmbientLight(0xffffff, 0.62);
+      const amb = new THREE.AmbientLight(0xffffff, 0.65);
       scene.add(amb);
-      const dir1 = new THREE.DirectionalLight(0xffffff, 0.95);
+      const dir1 = new THREE.DirectionalLight(0xffffff, 0.98);
       dir1.position.set(5, 6, 5);
       scene.add(dir1);
-      const dir2 = new THREE.PointLight(0x8ab4f8, 0.65, 20);
+      const dir2 = new THREE.PointLight(0x38bdf8, 0.75, 20);
       dir2.position.set(-4, -3, 4);
       scene.add(dir2);
 
@@ -2660,10 +3304,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       }
       pGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
       const pMat = new THREE.PointsMaterial({
-        color: 0x8ab4f8,
+        color: 0x38bdf8,
         size: 0.045,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.65
       });
       const windParticles = new THREE.Points(pGeo, pMat);
       windParticles.userData.dirs = dirs;
@@ -2678,7 +3322,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
       updateCameraPosition();
 
-      // Mouse Orbit & Zoom Controls
+      // Mouse Orbit & Zoom Controls for 3D
       canvas.addEventListener("mousedown", (e) => {
         threeEngine.isDragging = true;
         threeEngine.lastX = e.clientX;
@@ -2703,18 +3347,32 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         updateCameraPosition();
       }, { passive: false });
 
+      // 3D Raycaster Mouse Listeners
+      canvas.addEventListener("mousemove", onOnionCanvasMouseMove);
+      canvas.addEventListener("click", onOnionCanvasClick);
+      canvas.addEventListener("mouseleave", onOnionCanvasMouseLeave);
+
+      // 2D Canvas Mouse Listeners
+      canvas2D.addEventListener("mousemove", onOnion2DMouseMove);
+      canvas2D.addEventListener("click", onOnion2DClick);
+      canvas2D.addEventListener("mouseleave", onOnion2DMouseLeave);
+
       // Fix Window / Panel Resize Distortion via ResizeObserver
       const ro = new ResizeObserver(() => {
         const r = container.getBoundingClientRect();
         if (r.width > 0 && r.height > 0) {
           camera.aspect = r.width / r.height;
           camera.updateProjectionMatrix();
+          renderer.setPixelRatio(Math.max(1, window.devicePixelRatio || 1));
           renderer.setSize(r.width, r.height, false);
+          if (state.onionView === "2d") {
+            renderOnion2D();
+          }
         }
       });
       ro.observe(container);
 
-      rebuild3DModel();
+      renderOnionDiagram();
       animate3DLoop();
     }
 
@@ -2743,56 +3401,28 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       if (!starGroup) return;
       clearGroup(starGroup);
       clearGroup(specialGroup);
+      threeEngine.burningRings = [];
+      threeEngine.convectiveMarkers = [];
 
       const m1 = getModel(state.m1, state.z1);
       const idx = state.stepIdx;
       const sVal = m1.track.s[idx];
       const teff = Math.pow(10, m1.track.log_Teff[idx]);
-      const prof = getInterpolatedProfile(m1, sVal);
 
-      // Update HUD text
+      // Update HUD title and description
       const stageIdx = Math.min(5, Math.round(sVal));
       document.getElementById("hudTitle").textContent =
         `${m1.mass_init} M☉ (Z=${m1.z_init}) · ${m1.stage_names[stageIdx]}`;
       document.getElementById("hudDesc").textContent =
         `${describeActiveBurning(m1, idx)} | 终态: ${m1.pathway.remnant_type}`;
 
-      // Determine dominant element shells from radial profile X_i(q)
-      const shellDefs = [];
-      const qArr = prof.q;
-      let prevDom = null;
-      let startQ = 0.0;
-
-      const colorMap = {
-        Fe56: 0xe2e8f0,
-        Si28: 0xa855f7,
-        Ne20: 0x06b6d4,
-        O16: 0x38bdf8,
-        C12: 0x22c55e,
-        He4: 0xfacc15,
-        H1: teffToHexInt(teff),
-      };
-
-      for (let i = 0; i < qArr.length; i++) {
-        let bestSp = "H1";
-        let bestVal = -1;
-        for (const sp of GRID_DATA.metadata.species) {
-          if (prof[sp][i] > bestVal) {
-            bestVal = prof[sp][i];
-            bestSp = sp;
-          }
-        }
-        if (bestSp !== prevDom && prevDom !== null) {
-          shellDefs.push({ sp: prevDom, q0: startQ, q1: qArr[i], col: colorMap[prevDom] });
-          startQ = qArr[i];
-        }
-        prevDom = bestSp;
-      }
-      if (prevDom !== null) {
-        shellDefs.push({ sp: prevDom, q0: startQ, q1: 1.0, col: colorMap[prevDom] });
+      const coordBadge = document.getElementById("hudCoordBadge");
+      if (coordBadge) {
+        if (state.onionCoord === "q") coordBadge.textContent = "q 质量坐标";
+        else if (state.onionCoord === "r_norm") coordBadge.textContent = "r/R* 半径坐标";
+        else coordBadge.textContent = "log r 对数平衡";
       }
 
-      // Check if at End State Remnant (s > 4.65) for Special Astrophysical Visualization!
       const isEndState = sVal > 4.65;
       const remCode = m1.pathway.remnant_code;
 
@@ -2800,39 +3430,72 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         // Black Hole: Event Horizon + Relativistic Accretion Disk + Photon Ring
         const ehGeo = new THREE.SphereGeometry(0.55, 40, 40);
         const ehMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
-        specialGroup.add(new THREE.Mesh(ehGeo, ehMat));
+        const ehMesh = new THREE.Mesh(ehGeo, ehMat);
+        ehMesh.userData = {
+          shellData: {
+            name: "BH_Event_Horizon",
+            localizedName: "引力奇点与事件视界 (Event Horizon)",
+            colHex: "#000000",
+            is_convective: false,
+            burning_active: false,
+            burning_reaction: "广义相对论时空曲率奇异点: R_s = 2GM/c², 表面重力红移无限大",
+            tMid: 1.0e-7,
+            rhoMid: 2.0e16,
+            pMid: 1.0e35,
+            q0: 0.0, q1: 1.0, r0_norm: 0.0, r1_norm: 1.0,
+            abundances: { H1: 0, He4: 0, C12: 0, O16: 0, Ne20: 0, Si28: 0, Fe56: 0 }
+          }
+        };
+        specialGroup.add(ehMesh);
 
-        const photonGeo = new THREE.TorusGeometry(0.62, 0.035, 20, 80);
+        const photonGeo = new THREE.TorusGeometry(0.64, 0.035, 20, 80);
         const photonMat = new THREE.MeshBasicMaterial({ color: 0xfde047 });
         specialGroup.add(new THREE.Mesh(photonGeo, photonMat));
 
-        const diskGeo = new THREE.RingGeometry(0.75, 2.05, 64);
+        const diskGeo = new THREE.RingGeometry(0.75, 2.15, 64);
         const diskMat = new THREE.MeshBasicMaterial({
           color: 0xf97316,
           side: THREE.DoubleSide,
           transparent: true,
-          opacity: 0.72,
+          opacity: 0.75
         });
         const disk = new THREE.Mesh(diskGeo, diskMat);
         disk.rotation.x = Math.PI * 0.42;
         specialGroup.add(disk);
+
       } else if (isEndState && remCode === "NS") {
         // Neutron Star / Pulsar: Compact glowing core + Bipolar Relativistic Jet Beams + Magnetic Rings
-        const nsGeo = new THREE.SphereGeometry(0.45, 36, 36);
+        const nsGeo = new THREE.SphereGeometry(0.48, 36, 36);
         const nsMat = new THREE.MeshStandardMaterial({
           color: 0x38bdf8,
           emissive: 0x0284c7,
-          emissiveIntensity: 0.9,
-          roughness: 0.2,
+          emissiveIntensity: 0.95,
+          roughness: 0.2
         });
-        specialGroup.add(new THREE.Mesh(nsGeo, nsMat));
+        const nsMesh = new THREE.Mesh(nsGeo, nsMat);
+        nsMesh.userData = {
+          shellData: {
+            name: "NS_Core",
+            localizedName: "超高密简并中子核 (Neutron Star)",
+            colHex: "#38bdf8",
+            is_convective: false,
+            burning_active: false,
+            burning_reaction: "核子简并电子捕获 e⁻ + p → n + ν_e 完成; 简并中子费米压抗衡引力",
+            tMid: 1.0e8,
+            rhoMid: 4.5e14,
+            pMid: 2.5e33,
+            q0: 0.0, q1: 1.0, r0_norm: 0.0, r1_norm: 1.0,
+            abundances: { H1: 0, He4: 0, C12: 0, O16: 0, Ne20: 0, Si28: 0, Fe56: 0 }
+          }
+        };
+        specialGroup.add(nsMesh);
 
         const coneGeo = new THREE.ConeGeometry(0.28, 2.6, 28, 1, true);
         const coneMat = new THREE.MeshBasicMaterial({
           color: 0xc084fc,
           transparent: true,
-          opacity: 0.48,
-          side: THREE.DoubleSide,
+          opacity: 0.52,
+          side: THREE.DoubleSide
         });
         const jet1 = new THREE.Mesh(coneGeo, coneMat);
         jet1.position.y = 1.3;
@@ -2842,64 +3505,303 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         jet2.rotation.x = Math.PI;
         jet2.rotation.z = -0.25;
         specialGroup.add(jet1, jet2);
+
       } else {
         // Build Concentric Cutaway Onion-Skin Spheres
+        const shells = getDetailedOnionShells(m1, idx, state.onionCoord);
         const phiLength = state.cutaway ? Math.PI * 1.5 : Math.PI * 2.0;
-        const baseScale = isEndState && remCode.includes("WD") ? 0.65 : 1.35;
+        const baseScale = (isEndState && remCode.includes("WD")) ? 0.65 : 1.35;
 
-        shellDefs.forEach((sh, idxShell) => {
-          const rIn = Math.pow(sh.q0, 0.38) * baseScale;
-          const rOut = Math.max(rIn + 0.06, Math.pow(sh.q1, 0.38) * baseScale);
-          const isOuter = idxShell === shellDefs.length - 1;
-          const col = isOuter ? teffToHexInt(teff) : sh.col;
+        shells.forEach((sh, idxShell) => {
+          const rIn = sh.u0 * baseScale;
+          const rOut = Math.max(rIn + 0.035 * baseScale, sh.u1 * baseScale);
+          const col = sh.colHexInt;
 
-          // Spherical shell arc
-          const sphGeo = new THREE.SphereGeometry(rOut, 40, 32, 0, phiLength, 0, Math.PI);
+          // 1. Spherical shell arc
+          const sphGeo = new THREE.SphereGeometry(rOut, 44, 32, 0, phiLength, 0, Math.PI);
           const sphMat = new THREE.MeshStandardMaterial({
             color: col,
             emissive: col,
-            emissiveIntensity: isOuter ? 0.35 : 0.22,
-            roughness: 0.35,
-            metalness: sh.sp === "Fe56" ? 0.65 : 0.15,
-            side: THREE.DoubleSide,
+            emissiveIntensity: sh.isOuter ? 0.35 : (sh.is_convective ? 0.26 : 0.18),
+            roughness: sh.is_convective ? 0.45 : 0.28,
+            metalness: sh.sp === "Fe56" ? 0.68 : 0.14,
+            side: THREE.DoubleSide
           });
-          starGroup.add(new THREE.Mesh(sphGeo, sphMat));
+          const sphMesh = new THREE.Mesh(sphGeo, sphMat);
+          sphMesh.userData = { shellData: sh };
+          starGroup.add(sphMesh);
 
-          // Cutaway Cross-Section Annular Planes (at phi = 0 and phi = 1.5*pi)
+          // 2. Cutaway Cross-Section Annular Planes (at phi = 0 and phi = 1.5*pi)
           if (state.cutaway) {
-            const ringGeo = new THREE.RingGeometry(rIn, rOut, 32, 1, 0, Math.PI);
-            const ringMat = new THREE.MeshBasicMaterial({
+            const ringGeo = new THREE.RingGeometry(rIn, rOut, 36, 1, 0, Math.PI);
+            const faceMat1 = new THREE.MeshStandardMaterial({
               color: col,
-              side: THREE.DoubleSide,
+              emissive: col,
+              emissiveIntensity: sh.is_convective ? 0.30 : 0.14,
+              roughness: sh.is_convective ? 0.50 : 0.24,
+              side: THREE.DoubleSide
             });
-            const face1 = new THREE.Mesh(ringGeo, ringMat);
+            const face1 = new THREE.Mesh(ringGeo, faceMat1);
             face1.rotation.z = -Math.PI / 2;
+            face1.userData = { shellData: sh };
             starGroup.add(face1);
 
-            const face2 = new THREE.Mesh(ringGeo, ringMat);
+            const faceMat2 = faceMat1.clone();
+            const face2 = new THREE.Mesh(ringGeo, faceMat2);
             face2.rotation.z = -Math.PI / 2;
             face2.rotation.y = -Math.PI / 2;
+            face2.userData = { shellData: sh };
             starGroup.add(face2);
+          }
+
+          // 3. Volumetric Active Nuclear Burning Interface Glow Rings
+          if (sh.burning_active && rIn > 0.04) {
+            const torusGeo = new THREE.TorusGeometry(rIn, 0.022 * baseScale, 16, 64, phiLength);
+            const torusMat = new THREE.MeshBasicMaterial({
+              color: sh.burningColorHexInt || 0xfbbf24,
+              transparent: true,
+              opacity: 0.85,
+              blending: THREE.AdditiveBlending
+            });
+            const torusMesh = new THREE.Mesh(torusGeo, torusMat);
+            torusMesh.rotation.x = Math.PI / 2;
+            torusMesh.userData = {
+              shellData: sh,
+              isBurningRing: true,
+              baseRadius: rIn,
+              phase: idxShell * 1.3
+            };
+            starGroup.add(torusMesh);
+            threeEngine.burningRings.push(torusMesh);
+          }
+
+          // 4. Convective churn indicators on cutaway face
+          if (sh.is_convective && (rOut - rIn) > 0.12 && state.cutaway) {
+            const churnGeo = new THREE.TorusGeometry((rIn + rOut) / 2, 0.012, 10, 32, Math.PI * 0.4);
+            const churnMat = new THREE.MeshBasicMaterial({
+              color: 0xfb923c,
+              transparent: true,
+              opacity: 0.55
+            });
+            const churnMesh = new THREE.Mesh(churnGeo, churnMat);
+            churnMesh.rotation.z = -Math.PI * 0.25;
+            starGroup.add(churnMesh);
+            threeEngine.convectiveMarkers.push(churnMesh);
           }
         });
 
-        // If White Dwarf with Planetary Nebula (CO_WD or ONe_WD at EndState), add glowing nebula shell
+        // White Dwarf with Planetary Nebula at EndState
         if (isEndState && (remCode === "CO_WD" || remCode === "ONe_WD")) {
-          const nebGeo = new THREE.SphereGeometry(1.75, 36, 36);
+          const nebGeo = new THREE.SphereGeometry(1.85, 36, 36);
           const nebMat = new THREE.MeshBasicMaterial({
             color: 0x38bdf8,
             transparent: true,
-            opacity: 0.16,
-            wireframe: true,
+            opacity: 0.18,
+            wireframe: true
           });
           specialGroup.add(new THREE.Mesh(nebGeo, nebMat));
         }
+
+        // Dynamically update shell legend
+        updateShellLegend(shells);
       }
 
       // Update wind particle color
       if (windParticles) {
         windParticles.visible = state.showWind;
         windParticles.material.color.setHex(teffToHexInt(teff));
+      }
+
+      // If pinned shell, update inspector
+      if (state.pinnedShell) {
+        updateInspectorCard(state.pinnedShell, true);
+      }
+    }
+
+    function updateShellLegend(shells) {
+      const legendBox = document.getElementById("shellLegendBox");
+      if (!legendBox || !shells) return;
+      let html = `<div style="font-weight:600;color:#fff;margin-bottom:3px">核合成壳层图例</div>`;
+      shells.forEach((sh) => {
+        const transIcon = sh.is_convective ? "🌀" : "⚡";
+        const burnIcon = sh.burning_active ? "🔥" : "";
+        html += `
+          <div class="legend-item" title="${sh.burning_reaction}">
+            <span class="legend-swatch" style="background:${sh.colHex}"></span>
+            <span>${sh.localizedName.split(" (")[0]} ${transIcon}${burnIcon}</span>
+          </div>
+        `;
+      });
+      legendBox.innerHTML = html;
+    }
+
+    // 3D Raycaster Mousemove, Click, and Mouseleave
+    function onOnionCanvasMouseMove(e) {
+      if (threeEngine.isDragging) return;
+      const canvas = document.getElementById("onionCanvas");
+      const rect = canvas.getBoundingClientRect();
+      threeEngine.mouse.x = ((e.clientX - rect.left) / rect.width) * 2.0 - 1.0;
+      threeEngine.mouse.y = -((e.clientY - rect.top) / rect.height) * 2.0 + 1.0;
+
+      if (!threeEngine.camera || !threeEngine.starGroup) return;
+      threeEngine.raycaster.setFromCamera(threeEngine.mouse, threeEngine.camera);
+      const intersects = threeEngine.raycaster.intersectObjects(threeEngine.starGroup.children, true);
+
+      let hitShell = null;
+      let hitMesh = null;
+      for (let i = 0; i < intersects.length; i++) {
+        const obj = intersects[i].object;
+        if (obj && obj.userData && obj.userData.shellData) {
+          hitShell = obj.userData.shellData;
+          hitMesh = obj;
+          break;
+        }
+      }
+
+      if (hitMesh && hitShell) {
+        canvas.style.cursor = "pointer";
+        if (threeEngine.hoveredMesh !== hitMesh) {
+          resetHoveredMesh();
+          threeEngine.hoveredMesh = hitMesh;
+          if (hitMesh.material && hitMesh.material.emissiveIntensity !== undefined) {
+            threeEngine.origEmissiveIntensity = hitMesh.material.emissiveIntensity;
+            hitMesh.material.emissiveIntensity = Math.min(1.0, hitMesh.material.emissiveIntensity + 0.40);
+          }
+        }
+        if (!state.pinnedShell) {
+          updateInspectorCard(hitShell, false);
+        }
+      } else {
+        canvas.style.cursor = "grab";
+        resetHoveredMesh();
+        if (!state.pinnedShell) {
+          const card = document.getElementById("onionInspectorCard");
+          if (card) card.style.display = "none";
+        }
+      }
+    }
+
+    function onOnionCanvasClick(e) {
+      if (threeEngine.hoveredMesh && threeEngine.hoveredMesh.userData && threeEngine.hoveredMesh.userData.shellData) {
+        const shell = threeEngine.hoveredMesh.userData.shellData;
+        if (state.pinnedShell && state.pinnedShell.name === shell.name) {
+          state.pinnedShell = null;
+          updateInspectorCard(shell, false);
+          showToast("已解除壳层诊断锁定");
+        } else {
+          state.pinnedShell = shell;
+          updateInspectorCard(shell, true);
+          showToast(`已锁定 [${shell.localizedName}] 壳层物理诊断`);
+        }
+      } else {
+        if (state.pinnedShell) {
+          state.pinnedShell = null;
+          resetHoveredMesh();
+          const card = document.getElementById("onionInspectorCard");
+          if (card) card.style.display = "none";
+          showToast("已解除壳层诊断锁定");
+        }
+      }
+    }
+
+    function onOnionCanvasMouseLeave() {
+      resetHoveredMesh();
+      if (!state.pinnedShell) {
+        const card = document.getElementById("onionInspectorCard");
+        if (card) card.style.display = "none";
+      }
+    }
+
+    function resetHoveredMesh() {
+      if (threeEngine.hoveredMesh) {
+        if (threeEngine.hoveredMesh.material && threeEngine.origEmissiveIntensity !== null) {
+          threeEngine.hoveredMesh.material.emissiveIntensity = threeEngine.origEmissiveIntensity;
+        }
+        threeEngine.hoveredMesh = null;
+        threeEngine.origEmissiveIntensity = null;
+      }
+    }
+
+    function updateInspectorCard(shell, isPinned) {
+      const card = document.getElementById("onionInspectorCard");
+      if (!card) return;
+      card.style.display = "block";
+
+      const swatch = document.getElementById("inspColorSwatch");
+      if (swatch) swatch.style.background = shell.colHex || "#38bdf8";
+
+      const nameEl = document.getElementById("inspName");
+      if (nameEl) nameEl.textContent = shell.localizedName || shell.name;
+
+      const pinBtn = document.getElementById("inspPinBtn");
+      if (pinBtn) {
+        pinBtn.textContent = isPinned ? "✕ 解锁" : "📌 锁定";
+        pinBtn.classList.toggle("active", isPinned);
+      }
+
+      const transPill = document.getElementById("inspTransportPill");
+      if (transPill) {
+        transPill.className = "zone-pill " + (shell.is_convective ? "convective" : "radiative");
+        transPill.textContent = shell.is_convective ? "🌀 对流混合区 (Convective)" : "⚡ 辐射传导区 (Radiative)";
+      }
+
+      const burnPill = document.getElementById("inspBurningPill");
+      if (burnPill) {
+        burnPill.className = "zone-pill " + (shell.burning_active ? "burning" : "inert");
+        burnPill.textContent = shell.burning_active ? "🔥 活跃核聚变 (Active Fusion)" : "❄ 惰性壳层 (Inert / Stable)";
+      }
+
+      const reactBox = document.getElementById("inspReactionBox");
+      if (reactBox) {
+        reactBox.textContent = shell.burning_reaction;
+      }
+
+      const tempEl = document.getElementById("inspTemp");
+      if (tempEl) {
+        tempEl.textContent = `${formatScientific(shell.tMid)} K (logT=${Math.log10(shell.tMid).toFixed(2)})`;
+      }
+
+      const rhoEl = document.getElementById("inspRho");
+      if (rhoEl) {
+        rhoEl.textContent = `${formatScientific(shell.rhoMid)} g/cm³ (logρ=${Math.log10(shell.rhoMid).toFixed(2)})`;
+      }
+
+      const pressEl = document.getElementById("inspPressure");
+      if (pressEl) {
+        pressEl.textContent = `${formatScientific(shell.pMid)} dyn/cm²`;
+      }
+
+      const coordEl = document.getElementById("inspCoord");
+      if (coordEl) {
+        coordEl.textContent = `q: [${shell.q0.toFixed(2)}, ${shell.q1.toFixed(2)}] | r/R*: [${shell.r0_norm.toFixed(2)}, ${shell.r1_norm.toFixed(2)}]`;
+      }
+
+      const barsContainer = document.getElementById("inspAbundBars");
+      if (barsContainer) {
+        const speciesList = [
+          { key: "H1", lbl: "¹H", col: "#f97316" },
+          { key: "He4", lbl: "⁴He", col: "#facc15" },
+          { key: "C12", lbl: "¹²C", col: "#22c55e" },
+          { key: "O16", lbl: "¹⁶O", col: "#38bdf8" },
+          { key: "Ne20", lbl: "²⁰Ne", col: "#06b6d4" },
+          { key: "Si28", lbl: "²⁸Si", col: "#a855f7" },
+          { key: "Fe56", lbl: "⁵⁶Fe", col: "#e2e8f0" }
+        ];
+        let barsHtml = "";
+        speciesList.forEach((sp) => {
+          const val = (shell.abundances && shell.abundances[sp.key] !== undefined) ? shell.abundances[sp.key] : 0.0;
+          const pct = Math.max(0, Math.min(100, val * 100));
+          barsHtml += `
+            <div class="abund-row">
+              <span class="sp-lbl">${sp.lbl}</span>
+              <div class="abund-bar-bg">
+                <div class="abund-bar-fill" style="width:${pct}%;background:${sp.col}"></div>
+              </div>
+              <span class="abund-val">${pct.toFixed(1)}%</span>
+            </div>
+          `;
+        });
+        barsContainer.innerHTML = barsHtml;
       }
     }
 
@@ -2913,6 +3815,26 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       if (threeEngine.specialGroup) {
         threeEngine.specialGroup.rotation.y += 0.018;
       }
+
+      // Pulsate active nuclear burning glow rings
+      if (threeEngine.burningRings && threeEngine.burningRings.length > 0) {
+        threeEngine.burningRings.forEach((r) => {
+          const pulse = Math.sin(threeEngine.clock * 3.8 + (r.userData.phase || 0));
+          const s = 1.0 + 0.035 * pulse;
+          r.scale.set(s, s, s);
+          if (r.material) {
+            r.material.opacity = 0.65 + 0.25 * pulse;
+          }
+        });
+      }
+
+      // Animate convective markers
+      if (threeEngine.convectiveMarkers && threeEngine.convectiveMarkers.length > 0) {
+        threeEngine.convectiveMarkers.forEach((m) => {
+          m.rotation.z += 0.015;
+        });
+      }
+
       if (threeEngine.windParticles && state.showWind) {
         const posAttr = threeEngine.windParticles.geometry.attributes.position;
         const dirs = threeEngine.windParticles.userData.dirs;
@@ -2928,8 +3850,491 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         posAttr.needsUpdate = true;
       }
 
-      if (threeEngine.renderer && threeEngine.scene && threeEngine.camera) {
+      if (state.onionView === "3d" && threeEngine.renderer && threeEngine.scene && threeEngine.camera) {
         threeEngine.renderer.render(threeEngine.scene, threeEngine.camera);
+      }
+    }
+
+    // =========================================================================
+    // 2D Publication-Grade Cross-Section Schematic Engine
+    // =========================================================================
+    const onion2DState = {
+      mouseNormR: -1,
+      hoveredShellIdx: -1
+    };
+
+    function renderOnion2D() {
+      const canvas = document.getElementById("onion2DCanvas");
+      if (!canvas) return;
+      const { ctx, w, h } = prepareCanvas(canvas);
+
+      // Deep space radial background
+      const bgGrad = ctx.createRadialGradient(w * 0.34, h * 0.48, 10, w * 0.34, h * 0.48, Math.max(w, h));
+      bgGrad.addColorStop(0, "#0e1628");
+      bgGrad.addColorStop(1, "#070b14");
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      const m1 = getModel(state.m1, state.z1);
+      const idx = state.stepIdx;
+      const sVal = m1.track.s[idx];
+      const isEndState = sVal > 4.65;
+      const remCode = m1.pathway.remnant_code;
+
+      const cx = Math.round(w * 0.34);
+      const cy = Math.round(h * 0.48);
+      const maxR = Math.min(cx - 30, Math.round(h * 0.42));
+
+      if (isEndState) {
+        renderRemnant2D(ctx, cx, cy, maxR, m1, remCode, w, h);
+        return;
+      }
+
+      const shells = getDetailedOnionShells(m1, idx, state.onionCoord);
+
+      // Draw concentric coordinate grid guide rings
+      ctx.save();
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 4]);
+      [0.25, 0.50, 0.75, 1.0].forEach((frac) => {
+        ctx.beginPath();
+        ctx.arc(cx, cy, maxR * frac, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      // Find hovered shell
+      let hoveredIdx = -1;
+      if (onion2DState.mouseNormR >= 0 && onion2DState.mouseNormR <= 1.05) {
+        for (let i = 0; i < shells.length; i++) {
+          if (onion2DState.mouseNormR >= shells[i].u0 && onion2DState.mouseNormR <= shells[i].u1) {
+            hoveredIdx = i;
+            break;
+          }
+        }
+      }
+
+      // Draw shells from outer to inner
+      for (let i = shells.length - 1; i >= 0; i--) {
+        const sh = shells[i];
+        const rIn = sh.u0 * maxR;
+        const rOut = Math.max(rIn + 8, sh.u1 * maxR);
+        const isHovered = (i === hoveredIdx) || (state.pinnedShell && state.pinnedShell.name === sh.name);
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, rOut, 0, Math.PI * 2);
+        if (rIn > 0) {
+          ctx.arc(cx, cy, rIn, Math.PI * 2, 0, true);
+        }
+        ctx.closePath();
+
+        const colHex = sh.colHex || "#38bdf8";
+        if (isHovered) {
+          ctx.fillStyle = colHex;
+          ctx.shadowColor = colHex;
+          ctx.shadowBlur = 18;
+        } else {
+          ctx.fillStyle = hexToRgba(colHex, 0.82);
+        }
+        ctx.fill();
+
+        ctx.strokeStyle = isHovered ? "#ffffff" : "rgba(255, 255, 255, 0.25)";
+        ctx.lineWidth = isHovered ? 2.2 : 1.2;
+        ctx.stroke();
+
+        // Convective churn loops vs Radiative streamlines
+        if (sh.is_convective && (rOut - rIn) >= 12) {
+          drawConvectionLoops2D(ctx, cx, cy, (rIn + rOut) / 2, rOut - rIn);
+        } else if (!sh.is_convective && (rOut - rIn) >= 14) {
+          drawRadiativeStreamlines2D(ctx, cx, cy, (rIn + rOut) / 2);
+        }
+        ctx.restore();
+      }
+
+      // Draw active burning interfaces with pulsing glow rings
+      const burningInterfaces = shells.filter((s) => s.burning_active);
+      burningInterfaces.forEach((sh) => {
+        const rBurn = sh.u0 * maxR;
+        if (rBurn > 2) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(cx, cy, rBurn, 0, Math.PI * 2);
+          ctx.strokeStyle = "#facc15";
+          ctx.lineWidth = 2.4;
+          ctx.setLineDash([6, 3]);
+          ctx.shadowColor = "#facc15";
+          ctx.shadowBlur = 14;
+          ctx.stroke();
+          ctx.restore();
+        }
+      });
+
+      // Draw publication callouts and scale axis
+      drawPublicationCallouts(ctx, shells, cx, cy, maxR, w, h, hoveredIdx);
+      drawCoordinateScaleAxis(ctx, cx, cy, maxR, w, h, state.onionCoord);
+    }
+
+    function drawConvectionLoops2D(ctx, cx, cy, rMid, thickness) {
+      ctx.save();
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.40)";
+      ctx.lineWidth = 1.2;
+      const loopRadius = Math.min(thickness * 0.28, 8);
+      const nLoops = Math.max(4, Math.floor((2 * Math.PI * rMid) / 55));
+      for (let k = 0; k < nLoops; k++) {
+        const angle = (k * 2 * Math.PI) / nLoops;
+        const lx = cx + rMid * Math.cos(angle);
+        const ly = cy + rMid * Math.sin(angle);
+        ctx.beginPath();
+        ctx.arc(lx, ly, loopRadius, 0, Math.PI * 1.6);
+        ctx.stroke();
+        const ax = lx + loopRadius * Math.cos(Math.PI * 1.6);
+        const ay = ly + loopRadius * Math.sin(Math.PI * 1.6);
+        ctx.beginPath();
+        ctx.moveTo(ax - 2, ay - 3);
+        ctx.lineTo(ax, ay);
+        ctx.lineTo(ax - 3, ay + 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawRadiativeStreamlines2D(ctx, cx, cy, rMid) {
+      ctx.save();
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.22)";
+      ctx.lineWidth = 1.0;
+      ctx.setLineDash([2, 5]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, rMid, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawPublicationCallouts(ctx, shells, cx, cy, maxR, w, h, hoveredIdx) {
+      if (!shells || shells.length === 0) return;
+      const n = shells.length;
+      const startX = cx + maxR + 18;
+      const boxW = Math.min(260, w - startX - 16);
+      if (boxW < 120) return;
+
+      const boxH = Math.min(42, Math.floor((h - 60) / n) - 6);
+      const totalH = n * (boxH + 6);
+      const startY = Math.max(24, Math.round(cy - totalH / 2));
+
+      ctx.save();
+      shells.forEach((sh, i) => {
+        const isHovered = (i === hoveredIdx) || (state.pinnedShell && state.pinnedShell.name === sh.name);
+        const rMid = ((sh.u0 + sh.u1) / 2) * maxR;
+
+        const angle = -Math.PI * 0.32 + (i / Math.max(1, n - 1)) * (Math.PI * 0.64);
+        const arcX = cx + rMid * Math.cos(angle);
+        const arcY = cy + rMid * Math.sin(angle);
+
+        const targetY = startY + i * (boxH + 6);
+        const boxX = startX + 24;
+
+        ctx.strokeStyle = isHovered ? "#38bdf8" : "rgba(148, 163, 184, 0.45)";
+        ctx.lineWidth = isHovered ? 2.0 : 1.2;
+        ctx.beginPath();
+        ctx.arc(arcX, arcY, isHovered ? 4 : 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = isHovered ? "#38bdf8" : sh.colHex;
+        ctx.fill();
+        ctx.moveTo(arcX, arcY);
+        ctx.lineTo(boxX - 10, targetY + boxH / 2);
+        ctx.lineTo(boxX + boxW, targetY + boxH / 2);
+        ctx.stroke();
+
+        ctx.fillStyle = isHovered ? "rgba(14, 27, 49, 0.95)" : "rgba(11, 16, 29, 0.85)";
+        ctx.strokeStyle = isHovered ? "#38bdf8" : "rgba(148, 163, 184, 0.25)";
+        ctx.lineWidth = isHovered ? 1.6 : 1.0;
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(boxX, targetY, boxW, boxH, 4);
+        else ctx.rect(boxX, targetY, boxW, boxH);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = sh.colHex;
+        ctx.fillRect(boxX + 6, targetY + 6, 8, 8);
+
+        ctx.font = isHovered ? "bold 11.5px 'Inter', sans-serif" : "11px 'Inter', sans-serif";
+        ctx.fillStyle = isHovered ? "#ffffff" : "#e2e8f0";
+        ctx.textAlign = "left";
+        ctx.fillText(sh.localizedName || sh.name, boxX + 18, targetY + 14);
+
+        ctx.font = "10px 'JetBrains Mono', monospace";
+        ctx.fillStyle = sh.is_convective ? "#fb923c" : "#38bdf8";
+        const transText = sh.is_convective ? "🌀对流" : "⚡辐射";
+        const burnText = sh.burning_active ? "🔥聚变" : "❄惰性";
+        ctx.fillText(`${transText} · ${burnText}`, boxX + 6, targetY + boxH - 6);
+
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#94a3b8";
+        ctx.fillText(`q:[${sh.q0.toFixed(2)}-${sh.q1.toFixed(2)}]`, boxX + boxW - 6, targetY + boxH - 6);
+      });
+      ctx.restore();
+    }
+
+    function drawCoordinateScaleAxis(ctx, cx, cy, maxR, w, h, coordMode) {
+      const yAxis = h - 22;
+      const x0 = cx - maxR;
+      const x1 = cx + maxR;
+
+      ctx.save();
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.40)";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(x0, yAxis);
+      ctx.lineTo(x1, yAxis);
+      ctx.stroke();
+
+      ctx.font = "10px 'JetBrains Mono', monospace";
+      ctx.fillStyle = "#94a3b8";
+      ctx.textAlign = "center";
+
+      const ticks = [0, 0.2, 0.4, 0.6, 0.8, 1.0];
+      ticks.forEach((t) => {
+        const xPosR = cx + t * maxR;
+        ctx.beginPath();
+        ctx.moveTo(xPosR, yAxis - 4);
+        ctx.lineTo(xPosR, yAxis + 4);
+        ctx.stroke();
+        ctx.fillText(t.toFixed(1), xPosR, yAxis + 14);
+
+        if (t > 0) {
+          const xPosL = cx - t * maxR;
+          ctx.beginPath();
+          ctx.moveTo(xPosL, yAxis - 4);
+          ctx.lineTo(xPosL, yAxis + 4);
+          ctx.stroke();
+          ctx.fillText(`-${t.toFixed(1)}`, xPosL, yAxis + 14);
+        }
+      });
+
+      let label = "归一化内部质量坐标 q = m/M* (0=恒星中心, 1=恒星光球表面)";
+      if (coordMode === "r_norm") {
+        label = "真实物理半径坐标 r/R* (0=核心微观中心, 1=膨胀光球表面)";
+      } else if (coordMode === "log_r") {
+        label = "对流平衡对数半径坐标 log r = log₁₀(1 + 45q) / log₁₀(46)";
+      }
+      ctx.font = "10.5px 'Inter', sans-serif";
+      ctx.fillStyle = "#38bdf8";
+      ctx.textAlign = "left";
+      ctx.fillText(`📏 坐标映射标尺: ${label}`, 16, yAxis - 10);
+      ctx.restore();
+    }
+
+    function renderRemnant2D(ctx, cx, cy, maxR, m1, remCode, w, h) {
+      ctx.save();
+      ctx.textAlign = "center";
+
+      if (remCode === "BH") {
+        const rEH = maxR * 0.32;
+        const rPhoton = maxR * 0.48;
+        const rDiskIn = maxR * 0.58;
+        const rDiskOut = maxR * 1.05;
+
+        const diskGrad = ctx.createRadialGradient(cx, cy, rDiskIn, cx, cy, rDiskOut);
+        diskGrad.addColorStop(0, "rgba(249, 115, 22, 0.85)");
+        diskGrad.addColorStop(0.5, "rgba(234, 179, 8, 0.55)");
+        diskGrad.addColorStop(1, "rgba(239, 68, 68, 0.0)");
+        ctx.fillStyle = diskGrad;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, rDiskOut, rDiskOut * 0.38, Math.PI * 0.12, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = "#fef08a";
+        ctx.lineWidth = 2.8;
+        ctx.shadowColor = "#facc15";
+        ctx.shadowBlur = 16;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rPhoton, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "#000000";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.35)";
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rEH, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.font = "bold 13px 'Inter', sans-serif";
+        ctx.fillStyle = "#facc15";
+        ctx.fillText("恒星级黑洞 (Stellar-mass Black Hole)", cx, cy + maxR + 25);
+        ctx.font = "11px 'JetBrains Mono', monospace";
+        ctx.fillStyle = "#94a3b8";
+        ctx.fillText("广义相对论视界 R_s = 2GM/c² · 光子球层 1.5 R_s · 相对论吸积盘", cx, cy + maxR + 42);
+
+      } else if (remCode === "NS") {
+        const rNS = maxR * 0.25;
+
+        ctx.save();
+        ctx.fillStyle = "rgba(192, 132, 252, 0.35)";
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx - 30, cy - maxR * 1.1);
+        ctx.lineTo(cx + 30, cy - maxR * 1.1);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx - 30, cy + maxR * 1.1);
+        ctx.lineTo(cx + 30, cy + maxR * 1.1);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.40)";
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, maxR * 0.65, maxR * 0.45, 0, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = "#38bdf8";
+        ctx.shadowColor = "#38bdf8";
+        ctx.shadowBlur = 20;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rNS, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+        ctx.font = "bold 13px 'Inter', sans-serif";
+        ctx.fillStyle = "#c084fc";
+        ctx.fillText("中子星 / 毫秒脉冲星 (Neutron Star / Pulsar)", cx, cy + maxR + 25);
+        ctx.font = "11px 'JetBrains Mono', monospace";
+        ctx.fillStyle = "#94a3b8";
+        ctx.fillText("简并中子费米气体支撑 (Tolman-Oppenheimer-Volkoff 极限) · 磁偶极相对论射束", cx, cy + maxR + 42);
+
+      } else {
+        const rWD = maxR * 0.28;
+        const rNebula = maxR * 0.95;
+
+        const nebGrad = ctx.createRadialGradient(cx, cy, rWD * 1.2, cx, cy, rNebula);
+        nebGrad.addColorStop(0, "rgba(56, 189, 248, 0.32)");
+        nebGrad.addColorStop(0.6, "rgba(16, 185, 129, 0.18)");
+        nebGrad.addColorStop(1, "rgba(56, 189, 248, 0.0)");
+        ctx.fillStyle = nebGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rNebula, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.35)";
+        ctx.lineWidth = 1.2;
+        ctx.setLineDash([4, 6]);
+        ctx.beginPath();
+        ctx.arc(cx, cy, rNebula * 0.75, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.shadowColor = "#38bdf8";
+        ctx.shadowBlur = 22;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rWD, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+        ctx.font = "bold 13px 'Inter', sans-serif";
+        ctx.fillStyle = "#38bdf8";
+        ctx.fillText(`白矮星与行星状星云 (${m1.pathway.remnant_type})`, cx, cy + maxR + 25);
+        ctx.font = "11px 'JetBrains Mono', monospace";
+        ctx.fillStyle = "#94a3b8";
+        ctx.fillText("非相对论非热核简并电子压支撑 · 钱德拉塞卡极限 M_Ch = 1.44 M☉ · 热辐射冷却", cx, cy + maxR + 42);
+      }
+      ctx.restore();
+    }
+
+    function onOnion2DMouseMove(e) {
+      const canvas = document.getElementById("onion2DCanvas");
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = Math.round(rect.width * 0.34);
+      const cy = Math.round(rect.height * 0.48);
+      const maxR = Math.min(cx - 30, Math.round(rect.height * 0.42));
+
+      const dx = x - cx;
+      const dy = y - cy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const normR = dist / maxR;
+      onion2DState.mouseNormR = normR;
+
+      const m1 = getModel(state.m1, state.z1);
+      const shells = getDetailedOnionShells(m1, state.stepIdx, state.onionCoord);
+      let hitShell = null;
+      let hitIdx = -1;
+
+      if (normR <= 1.05) {
+        for (let i = 0; i < shells.length; i++) {
+          if (normR >= shells[i].u0 && normR <= shells[i].u1) {
+            hitShell = shells[i];
+            hitIdx = i;
+            break;
+          }
+        }
+      }
+
+      onion2DState.hoveredShellIdx = hitIdx;
+      renderOnion2D();
+
+      if (hitShell) {
+        canvas.style.cursor = "pointer";
+        if (!state.pinnedShell) {
+          updateInspectorCard(hitShell, false);
+        }
+      } else {
+        canvas.style.cursor = "crosshair";
+        if (!state.pinnedShell) {
+          const card = document.getElementById("onionInspectorCard");
+          if (card) card.style.display = "none";
+        }
+      }
+    }
+
+    function onOnion2DClick(e) {
+      const m1 = getModel(state.m1, state.z1);
+      const shells = getDetailedOnionShells(m1, state.stepIdx, state.onionCoord);
+      if (onion2DState.hoveredShellIdx >= 0 && onion2DState.hoveredShellIdx < shells.length) {
+        const shell = shells[onion2DState.hoveredShellIdx];
+        if (state.pinnedShell && state.pinnedShell.name === shell.name) {
+          state.pinnedShell = null;
+          updateInspectorCard(shell, false);
+          showToast("已解除壳层诊断锁定");
+        } else {
+          state.pinnedShell = shell;
+          updateInspectorCard(shell, true);
+          showToast(`已锁定 [${shell.localizedName}] 壳层物理诊断`);
+        }
+        renderOnion2D();
+      } else {
+        if (state.pinnedShell) {
+          state.pinnedShell = null;
+          const card = document.getElementById("onionInspectorCard");
+          if (card) card.style.display = "none";
+          showToast("已解除壳层诊断锁定");
+          renderOnion2D();
+        }
+      }
+    }
+
+    function onOnion2DMouseLeave() {
+      onion2DState.mouseNormR = -1;
+      onion2DState.hoveredShellIdx = -1;
+      renderOnion2D();
+      if (!state.pinnedShell) {
+        const card = document.getElementById("onionInspectorCard");
+        if (card) card.style.display = "none";
+      }
+    }
+
+    function renderOnionDiagram() {
+      if (state.onionView === "2d") {
+        renderOnion2D();
+      } else {
+        rebuild3DModel();
       }
     }
 
@@ -3105,7 +4510,7 @@ ${stopBlock}
       updateTelemetry();
       renderHR();
       renderRhoT();
-      rebuild3DModel();
+      renderOnionDiagram();
       renderProfileOrKippenhahn();
       renderParameterMatrix();
       updateMesaInlist();
@@ -3260,6 +4665,58 @@ ${stopBlock}
         renderRhoT();
       });
 
+      // Panel 3 View Mode Toggle (3D WebGL vs 2D Publication Schematic)
+      const btnView3D = document.getElementById("btnView3D");
+      const btnView2D = document.getElementById("btnView2D");
+      const tools3D = document.getElementById("tools3DGroup");
+      const onionCanvas3D = document.getElementById("onionCanvas");
+      const onionCanvas2D = document.getElementById("onion2DCanvas");
+
+      if (btnView3D && btnView2D) {
+        btnView3D.addEventListener("click", () => {
+          state.onionView = "3d";
+          btnView3D.classList.add("active");
+          btnView2D.classList.remove("active");
+          onionCanvas3D.style.display = "block";
+          onionCanvas2D.style.display = "none";
+          if (tools3D) tools3D.style.display = "inline-flex";
+          showToast("已切换至 3D 交互式剖切球体 (支持轨道旋转、缩放与射线悬停诊断)");
+          rebuild3DModel();
+        });
+
+        btnView2D.addEventListener("click", () => {
+          state.onionView = "2d";
+          btnView2D.classList.add("active");
+          btnView3D.classList.remove("active");
+          onionCanvas3D.style.display = "none";
+          onionCanvas2D.style.display = "block";
+          if (tools3D) tools3D.style.display = "none";
+          showToast("已切换至 2D 出版级截面图 (同心核合成层、对流翻腾图例与引出标注)");
+          renderOnion2D();
+        });
+      }
+
+      // Tri-coordinate mapping toggle buttons
+      document.querySelectorAll("#coordToggleGroup .btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#coordToggleGroup .btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          state.onionCoord = btn.dataset.coord;
+          const badge = document.getElementById("hudCoordBadge");
+          if (state.onionCoord === "q") {
+            if (badge) badge.textContent = "q 质量坐标";
+            showToast("已切换至归一化质量坐标 q = m/M* (直观展现核心核燃烧区域质量分布)");
+          } else if (state.onionCoord === "r_norm") {
+            if (badge) badge.textContent = "r/R* 半径坐标";
+            showToast("已切换至真实物理半径比例 r/R* (展现核心收缩与包层膨胀的极端尺度对比)");
+          } else {
+            if (badge) badge.textContent = "log r 对数平衡";
+            showToast("已切换至平衡对数半径比例 log r (微观核反应核心与宏观包层并重)");
+          }
+          renderOnionDiagram();
+        });
+      });
+
       // Panel 3 Camera & 3D Toggles
       document.getElementById("btnCamIso").addEventListener("click", () => {
         threeEngine.theta = 0.65; threeEngine.phi = 1.15; threeEngine.radius = 4.5;
@@ -3284,6 +4741,19 @@ ${stopBlock}
         rebuild3DModel();
       });
 
+      // Pin button on Raycaster Inspector Card
+      const pinBtn = document.getElementById("inspPinBtn");
+      if (pinBtn) {
+        pinBtn.addEventListener("click", () => {
+          state.pinnedShell = null;
+          pinBtn.textContent = "📌 锁定";
+          pinBtn.classList.remove("active");
+          document.getElementById("onionInspectorCard").style.display = "none";
+          resetHoveredMesh();
+          if (state.onionView === "2d") renderOnion2D();
+        });
+      }
+
       // Panel 4 Mode Switch (Abundance Profile vs Kippenhahn Diagram)
       const btnAbund = document.getElementById("btnModeAbundance");
       const btnKipp = document.getElementById("btnModeKippenhahn");
@@ -3299,6 +4769,76 @@ ${stopBlock}
         btnAbund.classList.remove("active");
         renderProfileOrKippenhahn();
       });
+
+      // Theater / Fullscreen Maximize Mode on Chart Panels
+      function toggleTheaterMode(panel) {
+        const isTheater = panel.classList.contains("theater-mode");
+        // Reset any other panel currently in theater mode
+        document.querySelectorAll(".viz-panel.theater-mode").forEach((p) => {
+          if (p !== panel) {
+            p.classList.remove("theater-mode");
+            const btn = p.querySelector(".btn-theater");
+            if (btn) {
+              btn.innerHTML = "⛶ 剧场模式";
+              btn.classList.remove("btn-primary");
+            }
+          }
+        });
+
+        if (isTheater) {
+          panel.classList.remove("theater-mode");
+          document.body.classList.remove("theater-active");
+          const btn = panel.querySelector(".btn-theater");
+          if (btn) {
+            btn.innerHTML = "⛶ 剧场模式";
+            btn.classList.remove("btn-primary");
+          }
+        } else {
+          panel.classList.add("theater-mode");
+          document.body.classList.add("theater-active");
+          const btn = panel.querySelector(".btn-theater");
+          if (btn) {
+            btn.innerHTML = "🗗 退出全屏";
+            btn.classList.add("btn-primary");
+          }
+        }
+
+        // Trigger smooth responsive redraw across all canvases
+        setTimeout(() => {
+          renderHR();
+          renderRhoT();
+          renderProfileOrKippenhahn();
+          if (state.onionView === "2d") {
+            renderOnion2D();
+          } else if (threeEngine.renderer && threeEngine.camera) {
+            const container = document.getElementById("onionContainer");
+            if (container) {
+              const r = container.getBoundingClientRect();
+              if (r.width > 0 && r.height > 0) {
+                threeEngine.camera.aspect = r.width / r.height;
+                threeEngine.camera.updateProjectionMatrix();
+                threeEngine.renderer.setPixelRatio(Math.max(1, window.devicePixelRatio || 1));
+                threeEngine.renderer.setSize(r.width, r.height, false);
+              }
+            }
+          }
+        }, 40);
+      }
+
+      document.querySelectorAll(".btn-theater").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const panel = e.currentTarget.closest(".viz-panel");
+          if (panel) toggleTheaterMode(panel);
+        });
+      });
+
+      const theaterBd = document.getElementById("theaterBackdrop");
+      if (theaterBd) {
+        theaterBd.addEventListener("click", () => {
+          const activePanel = document.querySelector(".viz-panel.theater-mode");
+          if (activePanel) toggleTheaterMode(activePanel);
+        });
+      }
 
       // Click on HR, Rho-T, or Kippenhahn Canvas to seek to nearest evolutionary step
       document.getElementById("hrCanvas").addEventListener("click", (e) => {
@@ -3541,7 +5081,13 @@ ${stopBlock}
       window.addEventListener("keydown", (e) => {
         const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
         if (tag === "input" || tag === "select" || tag === "textarea") return;
-        if (e.code === "Space") {
+        if (e.code === "Escape") {
+          const activePanel = document.querySelector(".viz-panel.theater-mode");
+          if (activePanel) {
+            e.preventDefault();
+            toggleTheaterMode(activePanel);
+          }
+        } else if (e.code === "Space") {
           e.preventDefault();
           playBtn.click();
         } else if (e.code === "ArrowRight") {
@@ -3561,6 +5107,18 @@ ${stopBlock}
         renderHR();
         renderRhoT();
         renderProfileOrKippenhahn();
+        if (threeEngine.renderer && threeEngine.camera) {
+          const container = document.getElementById("onionContainer");
+          if (container) {
+            const r = container.getBoundingClientRect();
+            if (r.width > 0 && r.height > 0) {
+              threeEngine.camera.aspect = r.width / r.height;
+              threeEngine.camera.updateProjectionMatrix();
+              threeEngine.renderer.setPixelRatio(Math.max(1, window.devicePixelRatio || 1));
+              threeEngine.renderer.setSize(r.width, r.height, false);
+            }
+          }
+        }
       });
     }
 

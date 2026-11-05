@@ -1,0 +1,99 @@
+[EMERGENCY] [2026-11-05 07:44:56] RAM: 86.1% (Used: 13.17GB / 15.29GB, Peak: 86.1%)
+[EMERGENCY_PAUSE] Ceiling reached (85.0% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:50] RAM: 80.4% (Used: 12.3GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:51] RAM: 80.3% (Used: 12.28GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:53] RAM: 80.4% (Used: 12.29GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:56] RAM: 80.4% (Used: 12.29GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:56] RAM: 80.7% (Used: 12.34GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:58] RAM: 82.4% (Used: 12.6GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:59] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:46:59] RAM: 82.2% (Used: 12.58GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:03] RAM: 82.5% (Used: 12.62GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:03] RAM: 82.7% (Used: 12.65GB / 15.29GB, Peak: 85.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (88.2% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 73.1%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:20] RAM: 81.4% (Used: 12.45GB / 15.29GB, Peak: 96.2%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:20] RAM: 81.6% (Used: 12.48GB / 15.29GB, Peak: 96.2%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (85.8% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:25] RAM: 82.6% (Used: 12.63GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:25] RAM: 82.6% (Used: 12.63GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:25] RAM: 82.6% (Used: 12.63GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (95.6% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:35] RAM: 80.2% (Used: 12.27GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:35] RAM: 81.8% (Used: 12.51GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:35] RAM: 83.2% (Used: 12.73GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.6% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:37] RAM: 83.8% (Used: 12.82GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:37] RAM: 83.9% (Used: 12.83GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:37] RAM: 83.8% (Used: 12.82GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:38] RAM: 83.8% (Used: 12.82GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:38] RAM: 83.8% (Used: 12.82GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:47:46] RAM: 82.7% (Used: 12.64GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (88.2% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 79.1%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:09] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (86.7% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 78.0%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:16] RAM: 81.4% (Used: 12.45GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:17] RAM: 82.9% (Used: 12.68GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:17] RAM: 82.6% (Used: 12.64GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:18] RAM: 83.6% (Used: 12.79GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.0% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 42.7%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:32] RAM: 83.4% (Used: 12.76GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (96.4% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 79.4%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:48:58] RAM: 80.5% (Used: 12.31GB / 15.29GB, Peak: 98.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (99.3% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:01] RAM: 82.1% (Used: 12.56GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:01] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:01] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:01] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:01] RAM: 82.5% (Used: 12.61GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (99.3% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:08] RAM: 83.8% (Used: 12.81GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:08] RAM: 83.8% (Used: 12.81GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:08] RAM: 83.8% (Used: 12.81GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:08] RAM: 83.9% (Used: 12.83GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:49:09] RAM: 80.2% (Used: 12.27GB / 15.29GB, Peak: 99.3%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.1% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 58.7%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:01] RAM: 80.5% (Used: 12.31GB / 15.29GB, Peak: 80.5%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:03] RAM: 80.8% (Used: 12.36GB / 15.29GB, Peak: 80.8%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.0% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 78.5%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:05] RAM: 81.9% (Used: 12.53GB / 15.29GB, Peak: 84.0%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:05] RAM: 82.1% (Used: 12.56GB / 15.29GB, Peak: 84.0%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.8% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 79.3%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:08] RAM: 81.2% (Used: 12.41GB / 15.29GB, Peak: 84.8%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:08] RAM: 82.7% (Used: 12.64GB / 15.29GB, Peak: 84.8%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (86.2% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:10] RAM: 80.6% (Used: 12.33GB / 15.29GB, Peak: 86.2%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:10] RAM: 81.1% (Used: 12.4GB / 15.29GB, Peak: 86.2%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:10] RAM: 80.6% (Used: 12.33GB / 15.29GB, Peak: 86.2%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:10] RAM: 82.6% (Used: 12.64GB / 15.29GB, Peak: 86.2%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:10] RAM: 83.8% (Used: 12.81GB / 15.29GB, Peak: 86.2%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (86.3% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:12] RAM: 81.7% (Used: 12.5GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:12] RAM: 82.0% (Used: 12.53GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:12] RAM: 82.2% (Used: 12.57GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.6% >= 84.0%). Pausing execution to prevent OOM...
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:14] RAM: 80.1% (Used: 12.25GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:14] RAM: 80.7% (Used: 12.35GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:15] RAM: 80.6% (Used: 12.32GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:15] RAM: 80.9% (Used: 12.37GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:15] RAM: 81.5% (Used: 12.46GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:15] RAM: 81.4% (Used: 12.45GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 07:54:15] RAM: 81.8% (Used: 12.52GB / 15.29GB, Peak: 86.3%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.5% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 76.0%. Resuming operation.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 08:01:05] RAM: 81.9% (Used: 12.53GB / 15.29GB, Peak: 82.6%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (84.6% >= 84.0%). Pausing execution to prevent OOM...
+[RESUMED] Memory recovered to 46.9%. Resuming operation.
+[EMERGENCY_PAUSE] Ceiling reached (86.3% >= 85.3%). Pausing execution to prevent OOM...
+[EMERGENCY_HALT] Memory remained above emergency ceiling for 120.0s: [2026-11-05 08:41:29] RAM: 86.3% (Used: 13.19GB / 15.29GB, Peak: 86.3%)
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 08:41:30] RAM: 86.4% (Used: 13.21GB / 15.29GB, Peak: 86.4%). Applying throttle backoff.
+[WARNING_THROTTLE] Approaching limit: [2026-11-05 08:41:34] RAM: 85.3% (Used: 13.04GB / 15.29GB, Peak: 85.3%). Applying throttle backoff.
+[EMERGENCY_PAUSE] Ceiling reached (76.9% >= 75.9%). Pausing execution to prevent OOM...
+[EMERGENCY_HALT] Memory remained above emergency ceiling for 120.0s: [2026-11-05 08:41:56] RAM: 76.9% (Used: 11.76GB / 15.29GB, Peak: 76.9%)
